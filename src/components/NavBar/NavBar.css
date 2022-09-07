@@ -1,0 +1,27 @@
+.navBarWrapper {
+  height: 64px;
+  background-color: #453f3f;
+}
+
+.navBarUl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBarLi {
+  list-style: none;
+  padding: 21px 17px 19px 18px;
+}
+
+.navBarLi a {
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  color: #aeaeae;
+}
+
+.navBarLi a:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}

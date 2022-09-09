@@ -1,0 +1,12 @@
+.uppBtn {
+  display: none;
+  position: fixed;
+  width: 35px;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 30px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}

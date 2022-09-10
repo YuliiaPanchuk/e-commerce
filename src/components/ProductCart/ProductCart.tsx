@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchProducts, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
@@ -57,7 +57,7 @@ export function ProductCart() {
             <div>
               <button onClick={() => decreaseCartQuantity(product.product_id)}>-</button>
               <div>
-                <span>{quantity}</span> in cart
+                <span>{quantity} in cart</span>
               </div>
               <button onClick={() => increaseCartQuantity(product.product_id)}>+</button>
             </div>

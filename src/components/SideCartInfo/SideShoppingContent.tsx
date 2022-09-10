@@ -76,20 +76,3 @@ export function SideShoppingContent({ onClose }: SideShoppingContentProps) {
     </div>
   );
 }
-
-{
-  /*
-          
-          <div className="minicartEmpty">
-            <button className="closeIconButton" onClick={onClose}>
-              <ClosingIcon />
-            </button>
-
-            <div className="minicartEmptyHeader">
-              <h1>My shopping cart</h1>
-              <p>Oh, it's empty! Fill it with some joy</p>
-            </div>
-          </div>
-
-          */
-}

@@ -28,7 +28,7 @@ export async function fetchProducts() {
         image_url: x.fields.image_url.stringValue,
         product_description: x.fields.product_description.stringValue,
         product_name: x.fields.product_name.stringValue,
-        product_price: x.fields.product_price.stringValue,
+        product_price: Number(x.fields.product_price.integerValue),
         product_link: x.fields.product_link.stringValue,
       };
     },
@@ -49,7 +49,7 @@ export async function getProductById(product_id: string): Promise<ProductInfo | 
     image_url: data.fields.image_url.stringValue,
     product_description: data.fields.product_description.stringValue,
     product_name: data.fields.product_name.stringValue,
-    product_price: data.fields.product_price.stringValue,
+    product_price: Number(data.fields.product_price.integerValue),
     product_link: data.fields.product_link.stringValue,
   };
   

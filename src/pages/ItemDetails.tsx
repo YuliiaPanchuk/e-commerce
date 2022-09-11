@@ -1,4 +1,4 @@
-export function ItemInfo() {
+export function ItemDetails() {
   return (
     <></>
   )

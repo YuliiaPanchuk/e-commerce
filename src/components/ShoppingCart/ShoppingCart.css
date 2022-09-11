@@ -1,0 +1,29 @@
+.shoppingCart {
+  height: 50vw;
+  background-color: aqua;
+}
+
+.shoppingCartWhiteBlock {
+  background-color: #fff;
+  width: 70%;
+}
+
+.shoppingCartTitle {
+  font-size: 35px;
+}
+
+.shoppingCartUl {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.shoppingCartProductWrapper {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+}
+
+.shoppingCartImage img{
+  height: 100px;
+}

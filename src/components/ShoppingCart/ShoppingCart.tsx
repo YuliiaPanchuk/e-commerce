@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getProductsById, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { NavBar } from '../NavBar/NavBar';
+import "./ShoppingCart.css"
 
 export function ShoppingCart() {
   const { cartItems } = useShoppingCart();
@@ -20,6 +21,7 @@ export function ShoppingCart() {
       <NavBar />
       <div className="shoppingCart">
         <div className="shoppingCartContainer">
+
           <div className="shoppingCartHeader">
             <p className="shoppingCartTitle">My shopping cart</p>
           </div>
@@ -27,7 +29,7 @@ export function ShoppingCart() {
           <div className="shoppingCartWhiteBlock">
             <p>Your items</p>
 
-            <ul>
+            <ul className="shoppingCartUl">
               <li>Products</li>
               <li>Qty</li>
               <li>Price</li>
@@ -36,14 +38,15 @@ export function ShoppingCart() {
             <>
               {product.map((item) => (
                 <div key={item.product_id} className="shoppingCartProductWrapper">
-                  <img src={item.image_url} alt="something" />
+                  <div className="shoppingCartImage">
+                    <img src={item.image_url} alt="Our product" />
+                  </div>
                   <p>{item.product_name}</p>
                 </div>
               ))}
             </>
           </div>
         </div>
-        <div></div>
       </div>
     </>
   );

@@ -2,14 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { fetchProducts, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
+import { QtyBtn } from '../QtyBtn/QtyBtn';
+import { RemoveBtn } from '../RemoveBtn/RemoveBtn';
 import { SideShoppingContent } from '../SideCartInfo/SideShoppingContent';
-import "./ProductCart.css"
+import './ProductCart.css';
 
 export function ProductCart() {
   const [product, setProduct] = useState<ProductInfo[]>([]);
 
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, isCartOpen, openCart, closeCart } =
-    useShoppingCart();
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+    isCartOpen,
+    openCart,
+    closeCart,
+  } = useShoppingCart();
 
   const displayProducts = async () => {
     const response = await fetchProducts();
@@ -54,14 +63,12 @@ export function ProductCart() {
           </button>
         ) : (
           <div>
-            <div>
-              <button onClick={() => decreaseCartQuantity(product.product_id)}>-</button>
-              <div>
-                <span>{quantity} in cart</span>
-              </div>
-              <button onClick={() => increaseCartQuantity(product.product_id)}>+</button>
-            </div>
-            <button onClick={() => removeFromCart(product.product_id)}>Remove</button>
+            <QtyBtn
+              decr={() => decreaseCartQuantity(product.product_id)}
+              incr={() => increaseCartQuantity(product.product_id)}
+              quantity={quantity}
+            />
+            <RemoveBtn onClick={() => removeFromCart(product.product_id)} />
           </div>
         )}
       </div>
@@ -71,9 +78,7 @@ export function ProductCart() {
   return (
     <div>
       {isCartOpen && <SideShoppingContent onClose={() => closeCart()} />}
-      <div className="productContainer">
-        {product.map(productCartInfo)}
-      </div>
+      <div className="productContainer">{product.map(productCartInfo)}</div>
     </div>
   );
 }

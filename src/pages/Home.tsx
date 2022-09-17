@@ -1,3 +1,4 @@
+import { ContactForm } from "../components/Contact/ContactForm";
 import { NavBar } from "../components/NavBar/NavBar";
 import { UppBtn } from "../components/ScrollButton/UppBtn";
 
@@ -6,6 +7,7 @@ export function Home() {
     <>
       <NavBar />
       <UppBtn />
+      <ContactForm />
     </>
   )
 }

@@ -13,14 +13,12 @@ export function ShoppingCartSide({ productItem }: ShoppingCartSideProps) {
     <div>
       <div className="minicartBody">
         <div className="miniCartImage">
-          <img className="miniProductImage" src={productItem.image_url} alt="product look" />
+          <a href="/itemDetails"> <img className="miniProductImage" src={productItem.image_url} alt="product look" /> </a>
         </div>
 
         <div className="miniCartSmallTitle">
           <p className="miniCartSmallHeader">The Rituals of Sakura</p>
-          <p className="miniCartProductName">
-            <a href="/">{productItem.product_name}</a>
-          </p>
+          <p className="miniCartProductName"> {productItem.product_name} </p>
 
           <span className="miniCartQuantityLabel">Quantity: </span>
           <span className="miniCartQuantityValue">{getItemQuantity(productItem.product_id)}</span>

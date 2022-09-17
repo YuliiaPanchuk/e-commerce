@@ -10,16 +10,16 @@ export function NavBar() {
             <a href="/">Home</a>
           </li>
           <li className="navBarLi">
-            <a href="/">About us</a>
+            <a href="/aboutUs">About us</a>
           </li>
           <li className="navBarLi">
-            <a href="/">News</a>
+            <a href="/news">News</a>
           </li>
           <li className="navBarLi">
-            <a href="/">Products</a>
+            <a href="/store">Store</a>
           </li>
           <li className="navBarLi">
-            <a href="/">Contact</a>
+            <a href="/contact">Contact</a>
           </li>
           <NavBarIcons />
         </ul>

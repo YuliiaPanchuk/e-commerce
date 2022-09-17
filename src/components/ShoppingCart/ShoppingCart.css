@@ -5,7 +5,7 @@
 
 .shoppingCartWhiteBlock {
   background-color: #fff;
-  width: 70%;
+  width: 40%;
 }
 
 .shoppingCartTitle {
@@ -22,8 +22,9 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   display: flex;
+  align-items: center;
 }
 
-.shoppingCartImage img{
+.shoppingCartImage img {
   height: 100px;
 }

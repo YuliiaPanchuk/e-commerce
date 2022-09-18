@@ -48,7 +48,6 @@ export function ShoppingCart() {
 
                     <div className="productsSection">
                       <p>{item.product_name}</p>
-                      <p>{item.product_description}</p>
                       <RemoveBtn onClick={() => removeFromCart(item.product_id)} />
                     </div>
 

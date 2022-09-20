@@ -28,3 +28,7 @@
 .shoppingCartImage img {
   height: 100px;
 }
+
+.productSection {
+  max-width: 185px;
+}

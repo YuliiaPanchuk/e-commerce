@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getProductsById, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
+import { formatCurrency } from '../../utilities/formatCurrency';
 import { NavBar } from '../NavBar/NavBar';
 import { QtyBtn } from '../QtyBtn/QtyBtn';
 import { RemoveBtn } from '../RemoveBtn/RemoveBtn';
@@ -48,7 +49,6 @@ export function ShoppingCart() {
 
                     <div className="productsSection">
                       <p>{item.product_name}</p>
-                      <p>{item.product_description}</p>
                       <RemoveBtn onClick={() => removeFromCart(item.product_id)} />
                     </div>
 
@@ -61,7 +61,7 @@ export function ShoppingCart() {
                     </div>
 
                     <div className="priceSection">
-                      <p>{ item.product_price}</p>
+                      <p>{ formatCurrency(item.product_price)}</p>
                     </div>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchProducts, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
+import { AddBtn } from '../AddBtn/AddBtn';
 import { QtyBtn } from '../QtyBtn/QtyBtn';
 import { RemoveBtn } from '../RemoveBtn/RemoveBtn';
 import { SideShoppingContent } from '../SideCartInfo/SideShoppingContent';
@@ -52,15 +53,10 @@ export function ProductCart() {
         </div>
 
         {quantity === 0 ? (
-          <button
-            className="addToCartBtn"
-            onClick={() => {
-              addProductToCart();
-              increaseCartQuantity(product.product_id);
-            }}
-          >
-            +Add to cart
-          </button>
+          <AddBtn
+            addProd={() => addProductToCart()}
+            incrQty={() => increaseCartQuantity(product.product_id)}
+          />
         ) : (
           <div>
             <QtyBtn

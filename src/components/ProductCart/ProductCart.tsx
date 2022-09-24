@@ -53,18 +53,19 @@ export function ProductCart() {
         </div>
 
         {quantity === 0 ? (
-          <AddBtn
-            addProd={() => addProductToCart()}
-            incrQty={() => increaseCartQuantity(product.product_id)}
-          />
+          <div className="productAddButton">
+            <AddBtn
+              addProd={() => addProductToCart()}
+              incrQty={() => increaseCartQuantity(product.product_id)}
+            />
+          </div>
         ) : (
-          <div>
+          <div className="productQuantityButton">
             <QtyBtn
               decr={() => decreaseCartQuantity(product.product_id)}
               incr={() => increaseCartQuantity(product.product_id)}
               quantity={quantity}
-            />
-            <RemoveBtn onClick={() => removeFromCart(product.product_id)} />
+              />
           </div>
         )}
       </div>

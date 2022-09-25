@@ -1,0 +1,11 @@
+.removeBtn {
+  display: flex;
+  color: #865;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.removeIcon {
+  padding-right: 5px;
+}

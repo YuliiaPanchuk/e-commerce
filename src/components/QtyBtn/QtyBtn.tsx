@@ -8,12 +8,12 @@ interface QtyBtnProps {
 
 export function QtyBtn({quantity, incr, decr }: QtyBtnProps) {
   return (
-    <div>
-      <button onClick={decr}>-</button>
-      <div>
+    <div className="quantityBlock">
+      <button onClick={decr} className="decrButton">-</button>
+      <div className="quatityButton">
         <span>{quantity}</span>
       </div>
-      <button onClick={incr}>+</button>
+      <button onClick={incr} className="incrButton">+</button>
     </div>
   );
 }

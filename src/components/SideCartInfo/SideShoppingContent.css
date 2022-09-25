@@ -19,7 +19,7 @@
 }
 
 .closeIconButton {
-  border: none;
+  border: 1px solid black;
 }
 
 .closingIcon {

@@ -4,6 +4,7 @@ import { getProductsById, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { ShoppingCartSide } from '../ShoppingCartSide/ShoppingCartSide';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './SideShoppingContent.css';
 
 type SideShoppingContentProps = {
@@ -13,6 +14,7 @@ type SideShoppingContentProps = {
 export function SideShoppingContent({ onClose }: SideShoppingContentProps) {
   const { cartItems, cartQuantity, getItemQuantity } = useShoppingCart();
   const [products, setProducts] = useState<ProductInfo[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const product_ids = cartItems.map((item) => item.id);
@@ -40,37 +42,39 @@ export function SideShoppingContent({ onClose }: SideShoppingContentProps) {
             <p>{cartQuantity} product</p>
             <span className="miniCartAddedInfo">Added to cart</span>
           </div>
-    
+
           {cartQuantity > 0 ? (
             <>
               {products.map((product) => (
                 <ShoppingCartSide key={product.product_id} productItem={product} />
               ))}
-    
+
               <div className="miniCartFooter">
                 <div className="miniCartFooterText">
                   <p className="miniCartFooterPiceText">Order total: </p>
                   <p className="miniCartFooterPice">{totalProductsPrice}</p>
                 </div>
-    
+
                 <div className="miniCartFooterDeliveryText">
                   <small>Delivery time 1-3 working days</small>
                 </div>
-    
+
                 <div className="miniCartFooterBtn">
                   <button className="continueShoppingBtn" onClick={onClose}>
                     Continue shopping
                   </button>
-    
-                  <button className="viewCartBtn">
-                    <Link to="/shoppingCart">View Cart</Link>
+
+                  <button className="viewCartBtn" onClick={() => navigate('/checkout')}>
+                    View Cart
                   </button>
                 </div>
               </div>
             </>
-            ) : (<><h1>It is empty</h1></>)
-          }
-          
+          ) : (
+            <>
+              <h1>It is empty</h1>
+            </>
+          )}
         </div>
       </section>
     </div>

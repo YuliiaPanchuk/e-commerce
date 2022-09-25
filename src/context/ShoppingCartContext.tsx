@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
+import { ProductInfo } from '../api/product';
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -78,21 +79,33 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     });
   }
 
-  return (
-    <ShoppingCartContex.Provider
-      value={{
-        getItemQuantity,
-        increaseCartQuantity,
-        decreaseCartQuantity,
-        removeFromCart,
-        cartItems,
-        cartQuantity,
-        openCart,
-        closeCart,
-        isCartOpen: isOpen,
-      }}
-    >
-      {children}
-    </ShoppingCartContex.Provider>
-  );
+  /*
+      function totalProductsPrice() {
+    const { getItemQuantity } = useShoppingCart();
+    const [products, setProducts] = useState<ProductInfo[]>([]);
+
+    products.reduce(
+      (total, product) => total + product.product_price * getItemQuantity(product.product_id),
+      0,
+    );
+  }  
+  */
+
+    return (
+      <ShoppingCartContex.Provider
+        value={{
+          getItemQuantity,
+          increaseCartQuantity,
+          decreaseCartQuantity,
+          removeFromCart,
+          cartItems,
+          cartQuantity,
+          openCart,
+          closeCart,
+          isCartOpen: isOpen,
+        }}
+      >
+        {children}
+      </ShoppingCartContex.Provider>
+    );
 }

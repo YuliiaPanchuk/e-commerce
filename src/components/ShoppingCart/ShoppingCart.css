@@ -1,11 +1,28 @@
 .shoppingCart {
   height: 50vw;
-  background-color: aqua;
+  background-color: #efedea;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.shoppingCartContainer {
+  margin-right: 40px;
+}
+
+.shoppingCartHeader {
+  margin: 30px 0;
 }
 
 .shoppingCartWhiteBlock {
   background-color: #fff;
-  width: 40%;
+  /*width: 30%;*/
+  margin: 0 auto;
+}
+
+.shoppingCartWhiteBlockContent {
+  padding: 0 10px;
 }
 
 .shoppingCartTitle {
@@ -16,19 +33,102 @@
   display: flex;
   justify-content: space-around;
   list-style: none;
+  padding: 4px 40px 16px;
 }
 
 .shoppingCartProductWrapper {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
   display: flex;
   align-items: center;
+  padding: 26px 30px
+}
+
+.shoppingCartImage {
+  width: 14%;
 }
 
 .shoppingCartImage img {
   height: 100px;
 }
 
-.productSection {
-  max-width: 185px;
+.productsSection {
+  width: 33%;
+  padding-left: 30px;
+}
+
+.cartProductQtyButton {
+  width: 20%;
+}
+
+.priceSection {
+  width: 20%;
+  padding-left: 88px;
+}
+
+.shoppingRemoveButton {
+  margin-top: 28px;
+}
+
+/*Checkout cart*/
+.summaryText {
+  margin: 20px;
+}
+
+.checkoutWrapper {
+  border: none;
+  width: 20%;
+  height: 560px;
+  background-color: #fff;
+  margin-top: 100px;
+}
+
+.summaryText {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.shippingOptions {
+  list-style: none;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.shippingOptions li {
+  margin: 30px 20px;
+}
+
+.subtotal,
+.shippingProduct,
+.totalCheckout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 20px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.continueToCheckout {
+  margin: 30px 85px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 14px 60px;
+  background-color: transparent;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.continueToCheckout:hover {
+  background-color: #1a1919;
+  border: 1px solid #1a1919;
+  color: #fff;
+}
+
+.secureCheckout {
+  color: #437d00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
 }

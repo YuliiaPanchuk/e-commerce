@@ -1,0 +1,28 @@
+.sectionWrapper {
+  width: 60%;
+  height: 25vw;
+  justify-content: center;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  gap: 120px;
+  padding: 60px 0;
+}
+
+.sectionContainer {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.sectionDescribtion {
+  line-height: 26px;
+  letter-spacing: 1px;
+  word-spacing: .5px;
+  text-align: justify;
+  padding-top: 20px;
+  font-size: 20px;
+}

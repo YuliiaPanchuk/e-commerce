@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeSection } from '../HomeSection/HomeSection';
+import { HomeSection } from '../WhyUs.tsx/WhyUs';
 import './HomeComponent.css';
 
 export function HomeComponent() {

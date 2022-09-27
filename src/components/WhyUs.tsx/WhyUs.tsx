@@ -4,7 +4,7 @@ import { EnvironmentIcon } from './EnvironmentIcon';
 import { FreeDelivery } from './FreeDeliveryIcon';
 import { QualityIcon } from './QualityIcon';
 import { ShopOnline } from './ShopOnline';
-import "./HomeSection.css"
+import './WhyUs.css';
 
 export function HomeSection() {
   return (

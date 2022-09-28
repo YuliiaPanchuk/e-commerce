@@ -1,0 +1,33 @@
+.newsWrapper {}
+
+.newsBlock {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 30vw;
+  margin: 0 auto;
+}
+
+.imageNews {
+  height: 708px;
+  width: 20%;
+}
+
+.imageNews img {
+  width: 100%;
+  height: 100%;
+}
+
+.textNews {
+  width: 600px;
+  text-align: justify;
+  line-height: 20px;
+  font-size: 18px;
+  letter-spacing: .5px;
+}
+
+.textNewsTitle {
+  font-size: 30px;
+  padding-bottom: 20px;
+}

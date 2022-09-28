@@ -1,0 +1,22 @@
+.footer {
+  height: 12vw;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 360px;
+}
+
+.footerInfo,
+.footerWorkingHours {
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+}
+
+.footerInfo p {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.footerWorkingHours {
+  margin-top: 20px;
+}

@@ -1,0 +1,38 @@
+.itemDetailsWrapper {
+  height: 50vw;
+}
+
+.itemDetailsContainer {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin-top: 50px;
+}
+
+.itemImage {
+  width: 440px;
+  height: 380px;
+  margin-right: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemImage img {
+  height: 90%;
+}
+
+.itemProductName {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.itemProductPrice {
+  font-size: 16px;
+}
+
+.wholeBeansType,
+.groundType {
+  padding: 5px 8px;
+}

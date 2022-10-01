@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchProducts, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
 import { AddBtn } from '../AddBtn/AddBtn';
 import { QtyBtn } from '../QtyBtn/QtyBtn';
-import { RemoveBtn } from '../RemoveBtn/RemoveBtn';
 import { SideShoppingContent } from '../SideCartInfo/SideShoppingContent';
 import './ProductCart.css';
 
@@ -15,7 +15,6 @@ export function ProductCart() {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
-    removeFromCart,
     isCartOpen,
     openCart,
     closeCart,
@@ -41,9 +40,9 @@ export function ProductCart() {
     return (
       <div key={product.product_id} className="productWrapper">
         <div className="imageWrapper">
-          <a href={product.product_link}>
+          <Link to={`/product/${product.product_id}`}>
             <img className="productImage" src={product.image_url} alt="Displaying product" />
-          </a>
+          </Link>
         </div>
 
         <div className="imageTextWrapper">

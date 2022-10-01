@@ -6,7 +6,7 @@ import { QualityIcon } from './QualityIcon';
 import { ShopOnline } from './ShopOnline';
 import './WhyUs.css';
 
-export function HomeSection() {
+export function WhyUs() {
   return (
     <>
       <section className="sectionWrapper">

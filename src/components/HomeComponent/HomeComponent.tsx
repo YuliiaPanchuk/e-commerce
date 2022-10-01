@@ -1,5 +1,4 @@
 import React from 'react';
-import { HomeSection } from '../WhyUs.tsx/WhyUs';
 import './HomeComponent.css';
 
 export function HomeComponent() {
@@ -14,8 +13,6 @@ export function HomeComponent() {
           <p>nom nom coffee</p>
         </div>
       </div>
-
-      <HomeSection />
     </>
   );
 }

@@ -33,8 +33,11 @@ export function Footer() {
           <small>Lorem lorem</small>
           <small>Lorem lorem</small>
         </div>
-
       </section>
+
+      <div className="rightsReserver">
+        <small>© 2022 Nom Nom Coffee | All Rights Reserved</small>
+      </div>
     </>
   )
 }

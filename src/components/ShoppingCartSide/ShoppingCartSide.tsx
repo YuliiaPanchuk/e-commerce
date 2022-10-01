@@ -15,7 +15,7 @@ export function ShoppingCartSide({ productItem }: ShoppingCartSideProps) {
     <div>
       <div className="minicartBody">
         <div className="miniCartImage">
-          <Link to="/itemDetails"> <img className="miniProductImage" src={productItem.image_url} alt="product look" /> </Link>
+          <Link to={`/product/${productItem.product_id}`}> <img className="miniProductImage" src={productItem.image_url} alt="product look" /> </Link>
         </div>
 
         <div className="miniCartSmallTitle">

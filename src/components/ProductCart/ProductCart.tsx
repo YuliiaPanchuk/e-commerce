@@ -64,7 +64,7 @@ export function ProductCart() {
               decr={() => decreaseCartQuantity(product.product_id)}
               incr={() => increaseCartQuantity(product.product_id)}
               quantity={quantity}
-              />
+            />
           </div>
         )}
       </div>

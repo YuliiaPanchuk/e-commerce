@@ -78,7 +78,7 @@ export function ProductDetails() {
                 />
               </div>
             ) : (
-              <div className="productQuantityButton">
+              <div className="productDetailsQuantityButton">
                 <QtyBtn
                   decr={() => decreaseCartQuantity(item.product_id)}
                   incr={() => increaseCartQuantity(item.product_id)}

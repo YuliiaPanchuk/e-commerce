@@ -52,3 +52,9 @@
 .productDetailsAddButton {
   margin-top: 20px;
 }
+
+.productDetailsQuantityButton {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+}

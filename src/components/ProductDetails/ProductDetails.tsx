@@ -51,8 +51,8 @@ export function ProductDetails() {
             </div>
 
             <div className="coffeeType">
-              <label htmlFor="dringType">Grind: </label>
-              <select className="dringType">
+              <label htmlFor="coffeeBeans" className="coffeeBeansLabel">Grind: </label>
+              <select className="coffeeBeans">
                 <option value="wholeBeans">Whole Beans</option>
                 <option value="espressonGrind">Espresson Grind</option>
                 <option value="stovetopGrind">Stovetop Grind</option>
@@ -60,8 +60,8 @@ export function ProductDetails() {
               </select>
             </div>
 
-            <div>
-              <label htmlFor="coffeeWeight">Weight: </label>
+            <div className="weight">
+              <label htmlFor="coffeeWeight" className="coffeeWeightLabel">Weight: </label>
               <select className="coffeeWeight">
                 <option value="250g">250g</option>
                 <option value="500g">500g</option>
@@ -71,7 +71,7 @@ export function ProductDetails() {
             </div>
 
             {quantity === 0 ? (
-              <div className="productAddButton">
+              <div className="productDetailsAddButton">
                 <AddBtn
                   addProd={() => addProductToCart()}
                   incrQty={() => increaseCartQuantity(item.product_id)}

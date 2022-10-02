@@ -1,10 +1,12 @@
-import { NavBar } from "../components/NavBar/NavBar";
+import React from "react"
+import { NavBar } from "../components/NavBar/NavBar"
+import { ProductDetails } from "../components/ProductDetails/ProductDetails"
 
 export function ItemDetails() {
   return (
-    <div>
+    <>
       <NavBar />
-      ItemDetails
-    </div>
+      <ProductDetails />
+    </>
   )
 }

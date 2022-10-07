@@ -9,9 +9,9 @@ import { WhyUs } from "../components/WhyUs.tsx/WhyUs";
 export function Home() {
   return (
     <>
-      <NavBar />
-      <UppBtn />
+      <NavBar isAbsolute />
       <HomeComponent />
+      <UppBtn />
       <WhyUs />
       <News />
       <Footer />

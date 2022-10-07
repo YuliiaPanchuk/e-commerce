@@ -3,7 +3,7 @@ import './News.css';
 
 export function News() {
   return (
-    <>
+    <div id='news'>
       <section className="newsWrapper">
         <div className="newsBlock">
           <div className="imageNews">
@@ -50,6 +50,6 @@ export function News() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

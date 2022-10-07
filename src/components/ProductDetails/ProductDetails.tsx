@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactDropdown from 'react-dropdown';
 import { useParams } from 'react-router-dom';
 import { getProductById, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
@@ -30,12 +31,12 @@ export function ProductDetails() {
   function addProductToCart() {
     openCart();
   }
-
+  
   if (!item) {
     return <p>loading...</p>;
   }
   const quantity = getItemQuantity(item.product_id);
-
+  
   return (
     <>
       <section className="itemDetailsWrapper">

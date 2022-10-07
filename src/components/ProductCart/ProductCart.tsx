@@ -10,7 +10,7 @@ import './ProductCart.css';
 
 export function ProductCart() {
   const [product, setProduct] = useState<ProductInfo[]>([]);
-
+  
   const {
     getItemQuantity,
     increaseCartQuantity,
@@ -35,7 +35,7 @@ export function ProductCart() {
   }
 
   function productCartInfo(product: ProductInfo) {
-    const quantity = getItemQuantity(product.product_id);
+    const quantity = getItemQuantity(product.product_id)
 
     return (
       <div key={product.product_id} className="productWrapper">
@@ -73,7 +73,6 @@ export function ProductCart() {
 
   return (
     <div>
-      {isCartOpen && <SideShoppingContent onClose={() => closeCart()} />}
       <div className="productContainer">{product.map(productCartInfo)}</div>
     </div>
   );

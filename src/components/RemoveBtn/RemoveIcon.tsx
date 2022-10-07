@@ -15,8 +15,8 @@ export function RemoveIcon() {
           <line
             fill="none"
             stroke="#000000"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
             x1="18.947"
             y1="17.153"
             x2="45.045"
@@ -27,8 +27,8 @@ export function RemoveIcon() {
           <line
             fill="none"
             stroke="#000000"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
             x1="19.045"
             y1="43.153"
             x2="44.947"
@@ -39,8 +39,8 @@ export function RemoveIcon() {
           <circle
             fill="none"
             stroke="#000000"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
             cx="32"
             cy="32"
             r="30.999"

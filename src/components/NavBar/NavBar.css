@@ -1,12 +1,18 @@
+.navBarAbsolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 .navBarWrapper {
   height: 64px;
-  background-color: #453f3f;
 }
 
 .navBarUl {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .navBarLi {
@@ -18,10 +24,14 @@
   font-size: 20px;
   letter-spacing: 0.3px;
   text-decoration: none;
-  color: #aeaeae;
+  color: #040404;
 }
 
 .navBarLi a:hover {
-  color: white;
-  border-bottom: 1px solid white;
+  color: #292f32;
+  border-bottom: 1px solid #292f32;
+}
+
+.navBarIcons {
+  margin-right: 10px;
 }

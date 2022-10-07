@@ -3,16 +3,20 @@ import './HomeComponent.css';
 
 export function HomeComponent() {
   return (
-    <>
-      <div className="home">
-        <div className="mainHomeImage">
-          <img src="/images/main.jpg" alt="" />
+    <div id='home'>
+      <div className="homeWrapper">
+        <div className="homeBanner">
+          <div className="leftHomeBox" />
+
+          <div className="mainHomeImage">
+          </div>
         </div>
 
         <div className="mainHeader">
-          <p>nom nom coffee</p>
+          <span>nom nom</span>
+          <span>coffee</span>
         </div>
       </div>
-    </>
+    </div>
   );
 }

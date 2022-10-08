@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { signUp } from "../api/account";
 import { LoginInputForm } from "../components/LogInForm/LoginInputForm"
 import "./LogIn.css"
 
@@ -34,13 +35,6 @@ export function LogIn() {
     },
     {
       id: 3,
-      name: "birthday",
-      type: "date",
-      placeholder: "Birthday",
-      label: "Birthday",
-    },
-    {
-      id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -51,7 +45,7 @@ export function LogIn() {
       required: true,
     },
     {
-      id: 5,
+      id: 4,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
@@ -62,13 +56,19 @@ export function LogIn() {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    
-    // TODO: Send data somewhere
+    signUp(values.username, values.password, values.email).then((data) => {
+      if (data.success) {
+        // Navigate to Log in page (use navigate hook here)
+      }
+      else {
+        alert(data.text)
+      }
+    })
   };
 
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
@@ -80,6 +80,7 @@ export function LogIn() {
           <LoginInputForm
             key={input.id}
             {...input}
+            // @ts-expect-error
             value={values[input.name]}
             onChange={onChange}
           />

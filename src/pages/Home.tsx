@@ -1,3 +1,4 @@
+import { AboutUs } from "../components/AboutUs/AboutUs";
 import { ContactForm } from "../components/Contact/ContactForm";
 import { Footer } from "../components/Footer/Footer";
 import { HomeComponent } from "../components/HomeComponent/HomeComponent";
@@ -11,6 +12,7 @@ export function Home() {
     <>
       <NavBar isAbsolute />
       <HomeComponent />
+      <AboutUs />
       <UppBtn />
       <WhyUs />
       <News />

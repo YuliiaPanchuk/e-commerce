@@ -3,15 +3,15 @@ import { NavBarIcons } from '../NavBarIcons/NavBarIcons';
 import './NavBar.css';
 
 export interface NavBarProps {
-  isAbsolute?: boolean
+  isAbsolute?: boolean;
 }
 
 export function NavBar({ isAbsolute }: NavBarProps) {
   const classes = [];
-  if (isAbsolute) classes.push("navBarAbsolute");
+  if (isAbsolute) classes.push('navBarAbsolute');
 
   return (
-    <div className={classes.join(" ")}>
+    <div className={classes.join(' ')}>
       <nav className="navBarWrapper">
         <ul className="navBarUl">
           <li className="navBarLi">

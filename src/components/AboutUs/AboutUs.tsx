@@ -1,7 +1,30 @@
-import "./AbputUs.css"
+import './AboutUs.css';
 
-export function AbputUs() {
+export function AboutUs() {
   return (
-    <div className="aboutUs">About us section</div>
-  )
+    <section id="aboutUs">
+      <div className="aboutUsImages">
+        <div className="aboutUsImageContainer">
+          <img src="images/NewsTwo.jpg" alt="" style={{ width: '400px' }} />
+        </div>
+        <div className="aboutUsImageContainer">
+          <img src="images/Test.jpg" alt="" style={{ width: '400px' }} />
+        </div >
+        <div className="aboutUsImageContainer">
+          <img src="images/Test.jpg" alt="" style={{ width: '400px' }} />
+        </div>
+        <div className="aboutUsImageContainer">
+          <img src="images/NewsTwo.jpg" alt="" style={{ width: '400px' }} />
+        </div>
+      </div>
+
+      <div className="aboutUsText">
+        <h1 className="aboutUsHeadline">NomNom Coffee Story</h1>
+        <p className="aboutUsDescription">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+      </div>
+    </section>
+  );
 }

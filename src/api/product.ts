@@ -60,3 +60,4 @@ export async function getProductsById(product_ids: string[]) {
 }
 
 // https://firestore.googleapis.com/v1/projects/e-commerce-f60a8/databases/(default)/documents/products
+

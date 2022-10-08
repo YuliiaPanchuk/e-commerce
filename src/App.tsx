@@ -5,6 +5,7 @@ import { ShoppingCartProvider, useShoppingCart } from './context/ShoppingCartCon
 import { CheckoutPage } from './pages/CheckoutPage';
 import { Home } from './pages/Home';
 import { ItemDetails } from './pages/ItemDetails';
+import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Store } from './pages/Store';
 
@@ -24,6 +25,7 @@ export function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/product/:id" element={<ItemDetails />} />
+            <Route path="/login" element={<Login /> } />
             <Route path="/register" element={<Register />} />
           </Routes>
           <GlobalComponents />

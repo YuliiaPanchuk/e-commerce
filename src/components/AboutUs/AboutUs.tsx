@@ -5,16 +5,16 @@ export function AboutUs() {
     <section id="aboutUs">
       <div className="aboutUsImages">
         <div className="aboutUsImageContainer">
-          <img src="images/NewsTwo.jpg" alt="" style={{ width: '400px' }} />
+          <img src="images/NewsTwo.jpg" alt=""/>
         </div>
         <div className="aboutUsImageContainer">
-          <img src="images/Test.jpg" alt="" style={{ width: '400px' }} />
+          <img src="images/Test.jpg" alt="" />
         </div >
         <div className="aboutUsImageContainer">
-          <img src="images/Test.jpg" alt="" style={{ width: '400px' }} />
+          <img src="images/Test.jpg" alt=""/>
         </div>
         <div className="aboutUsImageContainer">
-          <img src="images/NewsTwo.jpg" alt="" style={{ width: '400px' }} />
+          <img src="images/NewsTwo.jpg" alt="" />
         </div>
       </div>
 

@@ -18,7 +18,7 @@ app.post("/user/login", (req, res) => {
   const userPassword = req.body.password
 
   if (!userName || !userPassword) {
-    res.send("The field is empty")
+    res.send({ text: "The field is empty", success: false })
     return
   }
 
@@ -27,10 +27,10 @@ app.post("/user/login", (req, res) => {
 
   const user = json.find((x) => x.name === userName && x.password === userPassword)
   if (user) {
-    res.send("WORKS")
+    res.json({ text: "Loged in!", success: true })
   }
   else {
-    res.send("DOS NOT WORK")
+    res.json({ text: "Failed to log in!", success: false })
   }
 })
 

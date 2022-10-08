@@ -1,16 +1,18 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { signUp } from "../api/account";
 import { RegisterInputForm } from "../components/RegisterForm/RegisterInputForm"
-import "./LogIn.css"
+import { Login } from "./Login";
+import "./Register.css"
 
 export function Register() {
   const [values, setValues] = useState({
     username: "",
     email: "",
-    birthday: "",
     password: "",
     confirmPassword: "",
   });
+  const navigate = useNavigate();
 
   const inputs = [
     {
@@ -60,7 +62,7 @@ export function Register() {
     e.preventDefault();
     signUp(values.username, values.password, values.email).then((data) => {
       if (data.success) {
-        // Navigate to Log in page (use navigate hook here)
+        navigate("/login")
       }
       else {
         alert(data.text)

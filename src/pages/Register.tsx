@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { signUp } from "../api/account";
-import { LoginInputForm } from "../components/LogInForm/LoginInputForm"
+import { RegisterInputForm } from "../components/RegisterForm/RegisterInputForm"
 import "./LogIn.css"
 
-export function LogIn() {
+export function Register() {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -77,7 +77,7 @@ export function LogIn() {
       <form className="loginForm" onSubmit={handleSubmit}>
         <h1 className="loginFormText">Register</h1>
         {inputs.map((input) => (
-          <LoginInputForm
+          <RegisterInputForm
             key={input.id}
             {...input}
             // @ts-expect-error

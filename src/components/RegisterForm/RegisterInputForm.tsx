@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './LoginInputForm.css';
+import './RegisterInputForm.css';
 
-export function LoginInputForm(props: any) {
+export function RegisterInputForm(props: any) {
   const [focused, setFocused] = useState(false);
   const { label, errorMessage, onChange, id, ...inputProps } = props;
 

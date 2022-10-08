@@ -5,7 +5,7 @@ import { ShoppingCartProvider, useShoppingCart } from './context/ShoppingCartCon
 import { CheckoutPage } from './pages/CheckoutPage';
 import { Home } from './pages/Home';
 import { ItemDetails } from './pages/ItemDetails';
-import { LogIn } from './pages/LogIn';
+import { Register } from './pages/Register';
 import { Store } from './pages/Store';
 
 function GlobalComponents() {
@@ -14,7 +14,7 @@ function GlobalComponents() {
   return <>{isCartOpen && <SideShoppingContent onClose={() => closeCart()} />}</>;
 }
 
-function App() {
+export function App() {
   return (
     <ShoppingCartProvider>
       <div className="app">
@@ -24,7 +24,7 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/product/:id" element={<ItemDetails />} />
-            <Route path="/logIn" element={<LogIn />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
           <GlobalComponents />
         </BrowserRouter>
@@ -33,4 +33,3 @@ function App() {
   );
 }
 
-export default App;

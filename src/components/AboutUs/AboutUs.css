@@ -3,12 +3,24 @@
   display: flex;
 }
 
+.aboutUsLeftContainer {
+  width: 40%;
+  background-color: black;
+  position: relative;
+}
+
+.aboutUsRightContainer {
+  width: 60%;
+  background-color: #fff;
+  position: relative;
+}
+
 .aboutUsImages {
-  margin: 50px;
+  margin: 200px 0 0 300px;
   width: 34%;
-  height: 80%;
-  border: 1px solid rgb(0, 0, 0);
+  height: 70%;
   columns: 2 100px;
+  position: absolute;
 }
 
 .aboutUsImageContainer {
@@ -18,4 +30,22 @@
 
 .aboutUsImageContainer img {
   max-width: 100%;
+}
+
+.aboutUsText {
+  position: absolute;
+  width: 436px;
+  right: 20%;
+  margin-top: 400px;
+}
+
+.aboutUsText h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.aboutUsText p {
+  font-size: 20px;
+  letter-spacing: .5px;
+  line-height: 24px;
 }

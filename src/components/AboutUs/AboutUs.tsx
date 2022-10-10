@@ -7,16 +7,16 @@ export function AboutUs() {
       <div className="aboutUsRightContainer"></div>
       <div className="aboutUsImages">
         <div className="aboutUsImageContainer">
-          <img src="images/NewsTwo.jpg" alt="" />
+          <img src="images/AboutUsOne.jpg" alt="" />
         </div>
         <div className="aboutUsImageContainer">
-          <img src="images/Test.jpg" alt="" />
+          <img src="images/AboutUsTwo.jpg" alt="" />
         </div>
         <div className="aboutUsImageContainer">
-          <img src="images/Test.jpg" alt="" />
+          <img src="images/AboutUsThree.jpg" alt="" />
         </div>
         <div className="aboutUsImageContainer">
-          <img src="images/NewsTwo.jpg" alt="" />
+          <img src="images/AboutUsFour.jpg" alt="" />
         </div>
       </div>
 

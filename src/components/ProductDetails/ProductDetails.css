@@ -1,5 +1,6 @@
 .itemDetailsWrapper {
   height: 50vw;
+  background-color: #efedea;
 }
 
 .itemDetailsContainer {
@@ -10,10 +11,8 @@
 }
 
 .itemImage {
-  width: 440px;
-  height: 380px;
+  width: 50%;
   margin-right: 20px;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +23,7 @@
 }
 
 .itemProductName {
-  font-size: 20px;
+  font-size: 30px;
   padding: 10px 0;
 }
 
@@ -33,13 +32,24 @@
 }
 
 .coffeeType {
+  display: flex;
+  flex-direction: column;
   margin: 30px 0;
+  padding: 20px 0;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.weight {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d8d8d8;
 }
 
 .coffeeBeansLabel,
 .coffeeWeightLabel {
-  margin-right: 20px;
-  width: 100px;
+  padding-bottom: 15px;
 }
 
 .coffeeBeans,
@@ -57,4 +67,8 @@
   display: flex;
   align-items: flex-start;
   margin-top: 20px;
+}
+
+.itemDetailsRightContainer {
+  width: 50%;
 }

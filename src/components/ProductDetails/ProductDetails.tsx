@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDropdown from 'react-dropdown';
 import { useParams } from 'react-router-dom';
 import { getProductById, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
@@ -11,6 +10,8 @@ import './ProductDetails.css';
 export function ProductDetails() {
   const params = useParams();
   const [item, setItem] = useState<ProductInfo | null>();
+  const [option, setOption] = useState();
+  const [optionWeight, setOptionWeight] = useState();
   const {
     increaseCartQuantity,
     decreaseCartQuantity,
@@ -19,6 +20,20 @@ export function ProductDetails() {
     openCart,
     closeCart,
   } = useShoppingCart();
+
+  const optionsGrind = [
+    { value: 'wholeBeans', text: 'Whole Beans' },
+    { value: 'espressonGrind', text: 'Espresson Grind' },
+    { value: 'stovetopGrind', text: 'Stovetop Grind' },
+    { value: 'plungerGrind', text: 'Plunger Grind' },
+  ];
+
+  const optionsWeight = [
+    { value: '250g', text: '250g' },
+    { value: '500g', text: '500g' },
+    { value: '1kg', text: '1kg' },
+    { value: '2kg', text: '2kg' },
+  ];
 
   useEffect(() => {
     const productId = params.id!;
@@ -31,12 +46,20 @@ export function ProductDetails() {
   function addProductToCart() {
     openCart();
   }
-  
+
+  const handleGrindSelect = (event: any) => {
+    setOption(event.target.value);
+  };
+
+  const handkeWeightSelect = (event: any) => {
+    setOptionWeight(event.target.value);
+  };
+
   if (!item) {
     return <p>loading...</p>;
   }
   const quantity = getItemQuantity(item.product_id);
-  
+
   return (
     <>
       <section className="itemDetailsWrapper">
@@ -52,23 +75,34 @@ export function ProductDetails() {
             </div>
 
             <div className="coffeeType">
-              <label htmlFor="coffeeBeans" className="coffeeBeansLabel">Grind: </label>
-              <select className="coffeeBeans">
-                <option value="wholeBeans">Whole Beans</option>
-                <option value="espressonGrind">Espresson Grind</option>
-                <option value="stovetopGrind">Stovetop Grind</option>
-                <option value="plungerGrind">Plunger Grind</option>
+              <label htmlFor="coffeeBeans" className="coffeeBeansLabel">
+                Grind:
+              </label>
+              <select className="coffeeBeans" onChange={handleGrindSelect} value={option}>
+                {optionsGrind.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="weight">
-              <label htmlFor="coffeeWeight" className="coffeeWeightLabel">Weight: </label>
-              <select className="coffeeWeight">
-                <option value="250g">250g</option>
-                <option value="500g">500g</option>
-                <option value="1kg">1kg</option>
-                <option value="2kg">2kg</option>
+              <label htmlFor="coffeeWeight" className="coffeeWeightLabel">
+                Weight:
+              </label>
+              <select className="coffeeWeight" onChange={handkeWeightSelect} value={optionWeight}>
+                {optionsWeight.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
               </select>
+            </div>
+
+            <div>
+              <p>Grind: {option}</p>
+              <p>You select weight: {optionWeight}</p>
             </div>
 
             {quantity === 0 ? (

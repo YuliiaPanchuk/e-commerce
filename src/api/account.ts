@@ -38,7 +38,7 @@ export async function signIn(username: string, password: string) {
   const data = await response.json()
   return {
     success: data.success,
-    text: data.text
+    text: data.text,
+    email: data.email
   }
 }
-

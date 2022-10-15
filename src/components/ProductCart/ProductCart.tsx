@@ -1,44 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchProducts, ProductInfo } from '../../api/product';
+import { fetchProducts, likeProduct, ProductInfo } from '../../api/product';
+import { useLoginContext } from '../../context/LoginUserContext';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
 import { AddBtn } from '../AddBtn/AddBtn';
 import { QtyBtn } from '../QtyBtn/QtyBtn';
-import { SideShoppingContent } from '../SideCartInfo/SideShoppingContent';
+import { LikeIcon } from './LikeIcon';
 import './ProductCart.css';
 
-export function ProductCart() {
-  const [product, setProduct] = useState<ProductInfo[]>([]);
-  
-  const {
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
-    isCartOpen,
-    openCart,
-    closeCart,
-  } = useShoppingCart();
+interface productCartInfgProps {
+  product: ProductInfo;
+}
 
-  const displayProducts = async () => {
-    const response = await fetchProducts();
-
-    setProduct(response);
-  };
-
-  useEffect(() => {
-    displayProducts();
-  }, []);
+function ProductCartInfo({ product }: productCartInfgProps) {
+  const [isLiked, setIsLiked] = useState(false);
+  const { loggedIn, user } = useLoginContext();
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, openCart } =
+    useShoppingCart();
+  const quantity = getItemQuantity(product.product_id);
 
   function addProductToCart() {
     openCart();
   }
 
-  function productCartInfo(product: ProductInfo) {
-    const quantity = getItemQuantity(product.product_id)
-
-    return (
+  return (
+    <>
       <div key={product.product_id} className="productWrapper">
+        <div className="likeIcon">
+          <button
+            className="likeIconButton"
+            onClick={() => {
+              setIsLiked(!isLiked);
+              likeProduct(user.name, product.product_id, !isLiked);
+            }}
+          >
+            {loggedIn ? <LikeIcon isLiked={isLiked} /> : ''}
+          </button>
+        </div>
+
         <div className="imageWrapper">
           <Link to={`/product/${product.product_id}`}>
             <img className="productImage" src={product.image_url} alt="Displaying product" />
@@ -68,12 +68,30 @@ export function ProductCart() {
           </div>
         )}
       </div>
-    );
-  }
+    </>
+  );
+}
+
+export function ProductCart() {
+  const [product, setProduct] = useState<ProductInfo[]>([]);
+
+  const displayProducts = async () => {
+    const response = await fetchProducts();
+
+    setProduct(response);
+  };
+
+  useEffect(() => {
+    displayProducts();
+  }, []);
 
   return (
     <div>
-      <div className="productContainer">{product.map(productCartInfo)}</div>
+      <div className="productContainer">
+        {product.map((product) => (
+          <ProductCartInfo product={product} />
+        ))}
+      </div>
     </div>
   );
 }

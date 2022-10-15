@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useCallback,
+  useEffect,
+} from 'react';
 import { signIn as apiSignIn } from '../api/account';
 
 interface LoginUserProps {
@@ -28,6 +35,27 @@ export function LoginUserProvider({ children }: LoginUserProps) {
   });
   const [loggedIn, setLoggedIn] = useState(false);
 
+  // check if user is logged in on load
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      try {
+        const json = JSON.parse(user);
+        setUser(json);
+        setLoggedIn(true);
+      } catch (error) {
+        // not logged in
+      }
+    }
+  }, []);
+
+  // updates each time when cartItems updates
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+    }
+  }, [user]);
+
   const signIn = useCallback(
     (user: string, password: string, callback: (success: boolean) => void) => {
       apiSignIn(user, password).then((e) => {
@@ -47,6 +75,7 @@ export function LoginUserProvider({ children }: LoginUserProps) {
   const signOut = useCallback(() => {
     setLoggedIn(false);
     setUser({ name: '', email: '' });
+    alert('Logged out');
   }, []);
 
   return (

@@ -16,11 +16,15 @@ export function ShoppingCart({ products }: ShoppingCartProps) {
   const { cartItems, removeFromCart, decreaseCartQuantity, increaseCartQuantity, getItemQuantity } =
     useShoppingCart();
 
+  const totalPrice = products.reduce(
+    (result, item) => result + item.product_price * getItemQuantity(item.product_id),
+    0,
+  );
+
   return (
     <div>
       <div className="shoppingCart">
         <div className="shoppingCartContainer">
-          
           <div className="shoppingCartHeader">
             <p className="shoppingCartTitle">My shopping cart</p>
           </div>
@@ -32,6 +36,8 @@ export function ShoppingCart({ products }: ShoppingCartProps) {
               <ul className="shoppingCartUl">
                 <li>Products</li>
                 <li>Qty</li>
+                <li>Grind</li>
+                <li>Weight</li>
                 <li>Price</li>
               </ul>
 
@@ -103,9 +109,9 @@ export function ShoppingCart({ products }: ShoppingCartProps) {
 
           <div className="totalCheckout">
             <p>
-            Total <small>(incl. taxes)</small>
+              Total <small>(incl. taxes)</small>
             </p>
-            <p>Total</p>
+            <p>{totalPrice}</p>
           </div>
 
           <button className="continueToCheckout">Continue to checkout</button>

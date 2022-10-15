@@ -75,9 +75,9 @@ export function Register() {
   };
 
   return (
-    <div className="logInApp">
-      <form className="loginForm" onSubmit={handleSubmit}>
-        <h1 className="loginFormText">Register</h1>
+    <div className="registerApp">
+      <form className="registerForm" onSubmit={handleSubmit}>
+        <h1 className="registerFormText">Register</h1>
         {inputs.map((input) => (
           <RegisterInputForm
             key={input.id}
@@ -87,7 +87,7 @@ export function Register() {
             onChange={onChange}
           />
         ))}
-        <button className="formInputSubmit">Submit</button>
+        <button className="registerFormInputSubmit">Submit</button>
       </form>
     </div>
   );

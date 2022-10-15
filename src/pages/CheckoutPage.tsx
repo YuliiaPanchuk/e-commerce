@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getProductsById, ProductInfo } from '../api/product';
+import { LogoutButton } from '../components/LogoutButton/LogoutButton';
 import { NavBar } from '../components/NavBar/NavBar';
 import { ShoppingCart } from '../components/ShoppingCart/ShoppingCart';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 
 export function CheckoutPage() {
   const { cartItems } = useShoppingCart();
-  const [product, setProduct] = useState<ProductInfo[]>([]);
+  const [productsCart, setProduct] = useState<ProductInfo[]>([]);
 
   useEffect(() => {
     const product_ids = cartItems.map((item) => item.id);
@@ -19,7 +20,8 @@ export function CheckoutPage() {
   return (
     <>
       <NavBar />
-      <ShoppingCart products={product}/>
+      <LogoutButton />
+      <ShoppingCart products={productsCart} />
     </>
-  )
+  );
 }

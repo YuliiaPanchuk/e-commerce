@@ -2,13 +2,7 @@ import React from 'react';
 
 export function LogoFrame() {
   return (
-    <svg
-      width="138"
-      height="138"
-      viewBox="0 0 138 138"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 138 138" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_22_2)">
         <path
           d="M69 0C30.9534 0 0 30.9534 0 69C0 107.047 30.9534 138 69 138C107.047 138 138 107.047 138 69C138 30.9534 107.047 0 69 0ZM69 134.559C32.8509 134.559 3.44126 105.149 3.44126 69C3.44126 32.8509 32.8509 3.44126 69 3.44126C105.149 3.44126 134.559 32.8503 134.559 69C134.559 105.15 105.149 134.559 69 134.559Z"

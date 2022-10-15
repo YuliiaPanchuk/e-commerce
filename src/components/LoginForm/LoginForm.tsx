@@ -1,44 +1,55 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signIn } from '../../api/account';
+import { useLoginContext } from '../../context/LoginUserContext';
 import './LoginForm.css';
 
 export function LoginForm() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const user = useLoginContext();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    signIn(name, password).then((data) => {
-      if (data.success) {
+    user.signIn(name, password, (success) => {
+      if (success) {
         navigate('/store');
         alert('Welcome!');
-      } else {
-        alert(data.text);
       }
     });
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="">Username </label>
-        <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
+    <div className="loginApp">
+      <form className="loginForm" onSubmit={handleSubmit}>
+        <h1 className="loginFormText">Log in</h1>
+        <label className="loginFormLabel" htmlFor="">
+          Username{' '}
+        </label>
+        <input
+          className="loginFormInput"
+          type="text"
+          placeholder="Username"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
 
-        <label htmlFor="">Password </label>
-        <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-    
-        <button>Log in</button>
+        <label className="loginFormLabel" htmlFor="">
+          Password{' '}
+        </label>
+        <input
+          className="loginFormInput"
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+
+        <button className="loginFormInputSubmit">Log in</button>
+        <button className="registerFormInputSubmit" onClick={() => navigate('/register')}>
+          Register
+        </button>
       </form>
-    </>
+    </div>
   );
 }
-
-/*
-  TO DO:
-  3. save user log in data so it can be refreshed
-  2. add css to the input
-  4. display user icon and text on the top right corner
-  5. if logged in render the page and logout button.
-*/

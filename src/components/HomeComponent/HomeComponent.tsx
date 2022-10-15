@@ -13,8 +13,7 @@ export function HomeComponent() {
         </div>
 
         <div className="mainHeader">
-          <span>nom nom</span>
-          <span>coffee</span>
+          <h1>Nom nom coffee</h1>
         </div>
       </div>
     </div>

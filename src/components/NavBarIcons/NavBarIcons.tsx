@@ -3,9 +3,11 @@ import { ShoppingIcon } from './ShoppingIcon';
 import { UserProfile } from './UserProfile';
 import './icons.css';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
+import { useNavigate } from 'react-router-dom';
 
 export function NavBarIcons() {
   const { openCart, cartQuantity } = useShoppingCart();
+  const navigate = useNavigate();
 
   return (
     <div className="iconsNavBarWrapper">
@@ -33,7 +35,7 @@ export function NavBarIcons() {
           </button>
         </li>
         <li>
-          <button className="navbarIconBtn">
+          <button className="navbarIconBtn" onClick={() => navigate('/login')}>
             <UserProfile />
           </button>
         </li>

@@ -35,3 +35,25 @@
 .navBarIcons {
   margin-right: 10px;
 }
+
+.myPageButton {
+  border: none;
+  text-decoration: none;
+  padding: 15px;
+  background-color: transparent;
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .navBarLi {
+    padding: 5px;
+  }
+
+  .navBarLi a {
+    font-size: 15px;
+  }
+
+  .iconNavBarUl li {
+    padding: 5px;
+  }
+
+}

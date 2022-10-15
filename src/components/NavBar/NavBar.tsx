@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useLoginContext } from '../../context/LoginUserContext';
 import { NavBarIcons } from '../NavBarIcons/NavBarIcons';
 import './NavBar.css';
 
@@ -8,6 +9,7 @@ export interface NavBarProps {
 
 export function NavBar({ isAbsolute }: NavBarProps) {
   const classes = [];
+  const { loggedIn } = useLoginContext();
   if (isAbsolute) classes.push('navBarAbsolute');
 
   return (
@@ -18,10 +20,10 @@ export function NavBar({ isAbsolute }: NavBarProps) {
             <a href="/">Home</a>
           </li>
           <li className="navBarLi">
-            <a href="#aboutUs">About us</a>
+            <Link to={{ pathname: '/', hash: '#aboutUs' }}>About us</Link>
           </li>
           <li className="navBarLi">
-            <a href="#news">News</a>
+            <Link to="/news">News</Link>
           </li>
           <li className="navBarLi">
             <Link to="/store">Store</Link>
@@ -31,6 +33,12 @@ export function NavBar({ isAbsolute }: NavBarProps) {
           </li>
           <div className="navBarIcons">
             <NavBarIcons />
+          </div>
+
+          <div>
+            <button className="myPageButton">
+              {loggedIn ? <Link to="/user">My page</Link> : ''}
+            </button>
           </div>
         </ul>
       </nav>

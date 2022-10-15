@@ -1,58 +1,58 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom";
-import { signUp } from "../api/account";
-import { RegisterInputForm } from "../components/RegisterForm/RegisterInputForm"
-import { Login } from "./Login";
-import "./Register.css"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { signUp } from '../api/account';
+import { RegisterInputForm } from '../components/RegisterForm/RegisterInputForm';
+import { Login } from './Login';
+import './Register.css';
 
 export function Register() {
   const [values, setValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
   const navigate = useNavigate();
 
   const inputs = [
     {
       id: 1,
-      name: "username",
-      type: "text",
-      placeholder: "Username",
+      name: 'username',
+      type: 'text',
+      placeholder: 'Username',
       errorMessage:
         "Username should be 3-16 characters and shouldn't include any special character!",
-      label: "Username",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+      label: 'Username',
+      pattern: '^[A-Za-z0-9]{3,16}$',
       required: true,
     },
     {
       id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
+      name: 'email',
+      type: 'email',
+      placeholder: 'Email',
+      errorMessage: 'It should be a valid email address!',
+      label: 'Email',
       required: true,
     },
     {
       id: 3,
-      name: "password",
-      type: "password",
-      placeholder: "Password",
+      name: 'password',
+      type: 'password',
+      placeholder: 'Password',
       errorMessage:
-        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
-      label: "Password",
+        'Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!',
+      label: 'Password',
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
     {
       id: 4,
-      name: "confirmPassword",
-      type: "password",
-      placeholder: "Confirm Password",
+      name: 'confirmPassword',
+      type: 'password',
+      placeholder: 'Confirm Password',
       errorMessage: "Passwords don't match!",
-      label: "Confirm Password",
+      label: 'Confirm Password',
       pattern: values.password,
       required: true,
     },
@@ -62,12 +62,11 @@ export function Register() {
     e.preventDefault();
     signUp(values.username, values.password, values.email).then((data) => {
       if (data.success) {
-        navigate("/login")
+        navigate('/login');
+      } else {
+        alert(data.text);
       }
-      else {
-        alert(data.text)
-      }
-    })
+    });
   };
 
   const onChange = (e: any) => {
@@ -88,6 +87,9 @@ export function Register() {
           />
         ))}
         <button className="registerFormInputSubmit">Submit</button>
+        <button className="loginFormInputSubmit" onClick={() => navigate('/login')}>
+          Log in
+        </button>
       </form>
     </div>
   );

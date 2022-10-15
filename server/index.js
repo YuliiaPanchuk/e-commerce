@@ -141,7 +141,8 @@ app.post("/product/liked", (req, res) => {
 
   const liked = likedProducts
     .filter((x) => x.userName === userName)
-    .map((x) => products.find((p) => p.id === x.productId));
+    .map((x) => products.find((p) => p.id === x.productId))
+    .filter((x) => !!x); // not null
 
   res.json(liked);
 });

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
-import { ClosingIcon } from '../SideCartInfo/ClosingIcon';
 
 type ShoppingCartSideProps = {
   productItem: ProductInfo;

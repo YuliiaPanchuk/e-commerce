@@ -13,37 +13,35 @@ export type ProductInfo = {
   product_name: string;
   product_price: number;
   product_link: string;
-}
+};
 
 // Getting products data from database
 export async function fetchProducts() {
   const response = await fetch(`${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}`);
   const data = await response.json();
-  return data.documents.map(
-    (x: any) => {
-      let product_id = x.name.split('/').pop();
+  return data.documents.map((x: any) => {
+    let product_id = x.name.split('/').pop();
 
-      return {
-        product_id,
-        image_url: x.fields.image_url.stringValue,
-        product_description: x.fields.product_description.stringValue,
-        product_name: x.fields.product_name.stringValue,
-        product_price: Number(x.fields.product_price.integerValue),
-        product_link: x.fields.product_link.stringValue,
-      };
-    },
-  );
+    return {
+      product_id,
+      image_url: x.fields.image_url.stringValue,
+      product_description: x.fields.product_description.stringValue,
+      product_name: x.fields.product_name.stringValue,
+      product_price: Number(x.fields.product_price.integerValue),
+      product_link: x.fields.product_link.stringValue,
+    };
+  });
 }
 
 // Getting info about the product
 export async function getProductById(product_id: string): Promise<ProductInfo | null> {
-  const response = await fetch(`${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${product_id}`)
+  const response = await fetch(`${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${product_id}`);
   const data = await response.json();
 
   if (response.status !== 200) {
     return null;
   }
-  
+
   return {
     product_id,
     image_url: data.fields.image_url.stringValue,
@@ -52,12 +50,50 @@ export async function getProductById(product_id: string): Promise<ProductInfo | 
     product_price: Number(data.fields.product_price.integerValue),
     product_link: data.fields.product_link.stringValue,
   };
-  
-} 
+}
 
 export async function getProductsById(product_ids: string[]) {
-  return Promise.all(product_ids.map(item => getProductById(item)))
+  return Promise.all(product_ids.map((item) => getProductById(item)));
 }
 
 // https://firestore.googleapis.com/v1/projects/e-commerce-f60a8/databases/(default)/documents/products
 
+export async function likeProduct(
+  username: string,
+  productId: string,
+  liked: boolean,
+): Promise<ProductInfo[]> {
+  const url = 'http://localhost:3001/product/like';
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username,
+      productId,
+      like: liked,
+    }),
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+export async function likedProducts(username: string): Promise<ProductInfo[]> {
+  const url = 'http://localhost:3001/product/liked';
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username,
+    }),
+  });
+
+  const data = await response.json();
+  return data;
+}

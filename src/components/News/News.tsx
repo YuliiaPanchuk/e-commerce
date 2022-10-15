@@ -7,7 +7,7 @@ export function News() {
       <section className="newsWrapper">
         <div className="newsBlock">
           <div className="imageNews">
-            <img src="/images/newsOne.jpg" alt="news" />
+            <img src="/images/NewsOne.jpg" alt="news" />
           </div>
 
           <div className="textNews">
@@ -37,7 +37,7 @@ export function News() {
 
         <div className="newsBlock">
           <div className="imageNews">
-            <img src="/images/newsThree.jpg" alt="news" />
+          <img src="/images/newsTwo.jpg" alt="news" />
           </div>
 
           <div className="textNews">

@@ -1,4 +1,11 @@
-import React, { createContext, ReactNode, useContext, useState, useEffect, useCallback } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -16,15 +23,15 @@ type ShoppingCartContex = {
   increaseCartQuantity: (id: string) => void;
   decreaseCartQuantity: (id: string) => void;
   removeFromCart: (id: string) => void;
-  cartQuantity: number; // how many products in ttl
+  cartQuantity: number;
   cartItems: CartItem[];
   isCartOpen: boolean;
 };
 
-const ShoppingCartContex = createContext({} as ShoppingCartContex);
+const ShoppingCartContext = createContext({} as ShoppingCartContex);
 
 export function useShoppingCart() {
-  return useContext(ShoppingCartContex);
+  return useContext(ShoppingCartContext);
 }
 
 // initial value for the cartItems
@@ -33,10 +40,10 @@ function dataFromLocalStorage() {
   if (data) {
     try {
       const json = JSON.parse(data);
-      return json
-    } catch (error) { }
+      return json;
+    } catch (error) {}
   }
-  return []
+  return [];
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
@@ -45,22 +52,22 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
 
   // when the user has many tab opens from the store, the data updates in each of it
   const onStorageChanged = useCallback(() => {
-    setCartItems(dataFromLocalStorage())
-  }, [])
-  
+    setCartItems(dataFromLocalStorage());
+  }, []);
+
   useEffect(() => {
-    window.addEventListener("storage", onStorageChanged)
+    window.addEventListener('storage', onStorageChanged);
     return function () {
-      window.removeEventListener("storage", onStorageChanged)
+      window.removeEventListener('storage', onStorageChanged);
     };
   }, [onStorageChanged]);
 
   // updates each time when cartItems updates
   useEffect(() => {
     if (cartItems) {
-      localStorage.setItem('shopping cart', JSON.stringify(cartItems))
+      localStorage.setItem('shopping cart', JSON.stringify(cartItems));
     }
-  }, [cartItems])
+  }, [cartItems]);
 
   const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
 
@@ -109,20 +116,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     });
   }
 
-  /*
-      function totalProductsPrice() {
-    const { getItemQuantity } = useShoppingCart();
-    const [products, setProducts] = useState<ProductInfo[]>([]);
-
-    products.reduce(
-      (total, product) => total + product.product_price * getItemQuantity(product.product_id),
-      0,
-    );
-  }  
-  */
-
   return (
-    <ShoppingCartContex.Provider
+    <ShoppingCartContext.Provider
       value={{
         getItemQuantity,
         increaseCartQuantity,
@@ -136,6 +131,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       }}
     >
       {children}
-    </ShoppingCartContex.Provider>
+    </ShoppingCartContext.Provider>
   );
 }

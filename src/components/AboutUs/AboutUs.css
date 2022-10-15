@@ -49,3 +49,79 @@
   letter-spacing: .5px;
   line-height: 24px;
 }
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+  #aboutUs {
+    height: auto;
+  }
+
+  .aboutUsImages {
+    width: 68%;
+    margin: 20px;
+    height: 142px;
+  }
+
+  .aboutUsImageContainer {
+    width: 50%;
+  }
+
+  .aboutUsText {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .aboutUsText h1 {
+    font-size: 12px;
+  }
+
+  .aboutUsText p {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .aboutUsImages {
+    margin: 20px 0 0 30px;
+    width: 38%;
+  }
+
+  .aboutUsText h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .aboutUsText {
+    width: 46%;
+    right: 40px;
+    margin-top: 10px;
+  }
+
+  .aboutUsText p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1800px) {
+
+  .aboutUsImages {
+    margin: 54px 0 0 80px;
+    height: auto;
+  }
+
+  .aboutUsText h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .aboutUsText {
+    font-size: 16px;
+    width: 44%;
+    right: 40px;
+    margin-top: 50px;
+    text-align: center;
+  }
+}

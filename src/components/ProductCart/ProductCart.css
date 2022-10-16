@@ -74,6 +74,10 @@
   flex-direction: column;
 }
 
+/*
+grid-template-columns: repeat(auto-fill, min-max(190px, 1fr))
+*/
+
 @media (max-width: 576px) {
   .productContainer {
     display: flex;

@@ -1,62 +1,61 @@
-const express = require('express')
-const fs = require('fs')
+const express = require('express');
+const fs = require('fs');
 const cors = require('cors');
 
-const app = express()
+const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 3001
+const port = 3001;
 
 // LogIn
-app.post("/user/login", (req, res) => {
-  const userName = req.body.username
-  const userPassword = req.body.password
+app.post('/user/login', (req, res) => {
+  const userName = req.body.username;
+  const userPassword = req.body.password;
 
   if (!userName || !userPassword) {
-    res.send({ text: "The field is empty", success: false })
-    return
+    res.send({ text: 'The field is empty', success: false });
+    return;
   }
 
   const userData = fs.readFileSync("./data/users.json", "utf-8")
   const json = JSON.parse(userData)
 
-  const user = json.find((x) => x.name === userName && x.password === userPassword)
+  const user = json.find((x) => x.name === userName && x.password === userPassword);
   if (user) {
-    res.json({ text: "Logged in!", success: true, email: user.email })
+    res.json({ text: 'Logged in!', success: true, email: user.email });
+  } else {
+    res.json({ text: 'Failed to log in!', success: false });
   }
-  else {
-    res.json({ text: "Failed to log in!", success: false })
-  }
-})
+});
 
 // Register
-app.post("/user/register", (req, res) => {
-  const userName = req.body.username
-  const userEmail = req.body.email
-  const userPassword = req.body.password
+app.post('/user/register', (req, res) => {
+  const userName = req.body.username;
+  const userEmail = req.body.email;
+  const userPassword = req.body.password;
 
   if (!userName) {
-    res.json({ text: "The user name field is empty!", success: false })
-    return
+    res.json({ text: 'The user name field is empty!', success: false });
+    return;
   }
 
   if (!userEmail) {
-    res.json({ text: "Th user email field is empty!", success: false })
-    return
+    res.json({ text: 'Th user email field is empty!', success: false });
+    return;
   }
 
   if (!userPassword) {
-    res.json({ text: "The user password field is empty!", success: false })
-    return
+    res.json({ text: 'The user password field is empty!', success: false });
+    return;
   }
 
   const userData = fs.readFileSync("./data/users.json", "utf-8")
   const json = JSON.parse(userData)
 
-  const user = json.find((x) => x.name === userName)
+  const user = json.find((x) => x.name === userName);
   if (user) {
-    res.json({ text: "This username is already taken", success: false })
-    return
+    res.json({ text: 'This username is already taken', success: false });
+    return;
   }
 
   json.push({ name: userName, password: userPassword, email: userEmail })
@@ -71,8 +70,8 @@ app.get('/product', (req, res) => {
 
   // TODO: Filter/Sort
 
-  res.json(json)
-})
+  res.json(json);
+});
 
 // get product by id
 app.get('/product/:id', (req, res) => {
@@ -83,35 +82,35 @@ app.get('/product/:id', (req, res) => {
 
   const product = json.find((x) => x.id === productId);
   if (product) {
-    res.json(product)
+    res.json(product);
   } else {
-    res.status(404).json({})
+    res.status(404).json({});
   }
-})
+});
 
 // like/unlike a product
-app.post("/product/like", (req, res) => {
-  const userName = req.body.username
-  const productId = req.body.productId
-  const like = req.body.like
+app.post('/product/like', (req, res) => {
+  const userName = req.body.username;
+  const productId = req.body.productId;
+  const like = req.body.like;
 
   if (!userName) {
-    res.json({ text: "The user name field is empty!", success: false })
-    return
+    res.json({ text: 'The user name field is empty!', success: false });
+    return;
   }
 
   const userData = fs.readFileSync("./data/liked.json", "utf-8")
   const json = JSON.parse(userData)
 
-  const index = json.findIndex((x) => x.userName === userName && x.productId === productId)
+  const index = json.findIndex((x) => x.userName === userName && x.productId === productId);
 
   if (like) {
     if (index === -1) {
       // add the product to liked
-      json.push({ userName, productId })
+      json.push({ userName, productId });
     } else {
-      res.json({ text: "already liked" })
-      return
+      res.json({ text: 'already liked' });
+      return;
     }
   } else {
     // remove the product from liked
@@ -120,15 +119,15 @@ app.post("/product/like", (req, res) => {
 
   fs.writeFileSync("./data/liked.json", JSON.stringify(json, null, 2))
 
-  res.sendStatus(200)
+  res.sendStatus(200);
 });
 
-app.post("/product/liked", (req, res) => {
-  const userName = req.body.username
+app.post('/product/liked', (req, res) => {
+  const userName = req.body.username;
 
   if (!userName) {
-    res.json({ text: "The user name field is empty!", success: false })
-    return
+    res.json({ text: 'The user name field is empty!', success: false });
+    return;
   }
 
   // read all the liked products
@@ -148,5 +147,5 @@ app.post("/product/liked", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});

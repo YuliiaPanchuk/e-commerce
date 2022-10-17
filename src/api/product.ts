@@ -7,12 +7,36 @@ export type ProductInfo = {
   product_name: string;
   product_price: number;
   product_link: string;
+  user_liked?: boolean;
 };
 
-// Getting products data from database
-export async function fetchProducts() {
-  const url = API_ENDPOINT + '/product';
+export interface FetchProductsParams {
+  search: string;
+  sortBy: string;
+  username: string;
+}
 
+export interface FetchProductsResult {
+  total: number;
+  count: number;
+  items: ProductInfo[];
+}
+
+// Getting products data from database
+export async function apiFetchProducts(
+  queryParams: FetchProductsParams,
+): Promise<FetchProductsResult> {
+  // build the url query params "?search=mysearch"
+  const query = Object.keys(queryParams)
+    .map(
+      (k) =>
+        `${encodeURIComponent(k)}=${encodeURIComponent(
+          queryParams[k as keyof FetchProductsParams],
+        )}`,
+    )
+    .join('&');
+
+  const url = API_ENDPOINT + '/product?' + query;
   const response = await fetch(url, {
     method: 'GET',
     headers: {
@@ -21,18 +45,21 @@ export async function fetchProducts() {
   });
 
   const data = await response.json();
-  return data.map((x: any) => {
-    let product_id = x.name.split('/').pop();
-
-    return {
-      product_id,
-      image_url: x.image_url,
-      product_description: x.description,
-      product_name: x.name,
-      product_price: Number(x.price),
-      product_link: x.link,
-    };
-  });
+  return {
+    total: data.total,
+    count: data.count,
+    items: data.items.map((x: any) => {
+      return {
+        product_id: x.id,
+        image_url: x.image_url,
+        product_description: x.description,
+        product_name: x.name,
+        product_price: Number(x.price),
+        product_link: x.link,
+        user_liked: x.user_liked,
+      };
+    }),
+  };
 }
 
 // Getting info about the product
@@ -62,14 +89,14 @@ export async function getProductById(product_id: string): Promise<ProductInfo | 
 }
 
 export async function getProductsById(product_ids: string[]) {
-  return Promise.all(product_ids.map((item) => getProductById(item)));
+  return Promise.all(product_ids.map((item) => getProductById(item)).filter((x) => !!x));
 }
 
 export async function likeProduct(
   username: string,
   productId: string,
   liked: boolean,
-): Promise<ProductInfo[]> {
+): Promise<boolean> {
   const url = API_ENDPOINT + '/product/like';
 
   const response = await fetch(url, {
@@ -84,11 +111,10 @@ export async function likeProduct(
     }),
   });
 
-  const data = await response.json();
-  return data;
+  return response.status === 200;
 }
 
-export async function likedProducts(username: string): Promise<ProductInfo[]> {
+export async function apiLikedProducts(username: string): Promise<ProductInfo[]> {
   const url = API_ENDPOINT + '/product/liked';
 
   const response = await fetch(url, {

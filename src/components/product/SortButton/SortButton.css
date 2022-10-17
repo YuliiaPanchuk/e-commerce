@@ -1,16 +1,16 @@
-.sortButtonWrapper {
+.SortButton {
   position: relative;
   z-index: 15;
 }
 
-.sortButtonSelect {
+.SortButton select {
   background-color: #1a1919;
   color: #fff;
   height: 30px;
   cursor: pointer;
 }
 
-.sortButtonOption {
+.SortButton option {
   background-color: #fff;
   color: black;
   font-size: 16px;

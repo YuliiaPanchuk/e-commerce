@@ -11,6 +11,8 @@ import { Login } from './pages/user';
 import { Register } from './pages/user/Register';
 import { Store } from './pages/Store';
 
+import './App.css';
+
 const useScrollToLocation = () => {
   const scrolledRef = React.useRef(false);
   const { hash } = useLocation();

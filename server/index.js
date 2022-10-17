@@ -65,12 +65,56 @@ app.post('/user/register', (req, res) => {
 
 // get all products
 app.get('/product', (req, res) => {
+  const search = (req.query.search || "").toLowerCase();
+  const sortBy = req.query.sortBy || "fromAtoZ";
+  const username = req.query.username;
+
   const fileContent = fs.readFileSync("./data/products.json", "utf-8")
-  const json = JSON.parse(fileContent);
+  let products = JSON.parse(fileContent);
 
-  // TODO: Filter/Sort
+  const totalProductCount = products.length;
 
-  res.json(json);
+  products = products
+    .filter((x) =>
+      x.name.toLowerCase().includes(search) ||
+      x.description.toLowerCase().includes(search)
+    );
+
+  switch (sortBy) {
+    default:
+    case "fromAtoZ":
+      products = products.sort((a, b) => (a.name > b.name) ? -1 : 1);
+      break;
+
+    case "fromZtoA":
+      products = products.sort((a, b) => (a.name < b.name) ? -1 : 1);
+      break;
+
+    case "highToLow":
+      products = products.sort((a, b) => (a.price > b.price) ? -1 : 1);
+      break;
+
+    case "lowToHigh":
+      products = products.sort((a, b) => (a.price < b.price) ? -1 : 1);
+      break;
+  }
+
+  if (username) {
+    const likedProductsContent = fs.readFileSync("./data/liked.json", "utf-8")
+    const likedProducts = JSON.parse(likedProductsContent)
+      .filter((x) => x.userName === username);
+
+    products = products.map((product) => ({
+      ...product,
+      user_liked: likedProducts.findIndex((x) => x.productId === product.id) !== -1
+    }));
+  }
+
+  res.json({
+    total: totalProductCount,
+    count: products.length,
+    items: products
+  });
 });
 
 // get product by id
@@ -135,13 +179,17 @@ app.post('/product/liked', (req, res) => {
   const likedProducts = JSON.parse(fileContentLiked)
 
   // read all the products
-  const fileContentProducts = fs.readFileSync("./data/data.json", "utf-8")
+  const fileContentProducts = fs.readFileSync("./data/products.json", "utf-8")
   const products = JSON.parse(fileContentProducts);
 
   const liked = likedProducts
     .filter((x) => x.userName === userName)
     .map((x) => products.find((p) => p.id === x.productId))
-    .filter((x) => !!x); // not null
+    .filter((x) => !!x) // not null
+    .map((x) => ({
+      ...x,
+      user_liked: true
+    }));
 
   res.json(liked);
 });

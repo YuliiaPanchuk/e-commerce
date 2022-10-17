@@ -1,0 +1,12 @@
+.Section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-2);
+}
+
+.Section__Title {
+  font-size: 24px;
+  padding: 24px 4px;
+}
+
+.Section__Content {}

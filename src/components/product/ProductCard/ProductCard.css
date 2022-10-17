@@ -1,0 +1,60 @@
+.ProductCard {
+  background-color: #fff;
+  height: 450px;
+  width: 300px;
+}
+
+.likeIcon {
+  position: absolute;
+  margin: 16px;
+}
+
+.likeIconButton {
+  border: none;
+  background-color: transparent;
+}
+
+/*Product image*/
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper img {
+  width: 230px;
+}
+
+/*Product text*/
+.imageTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productName {
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+.productDescription {
+  letter-spacing: .5px;
+  line-height: 25px;
+  padding: 0 10px;
+  width: 80%;
+  color: #767676;
+  text-align: center;
+  font-size: 14px;
+}
+
+.productPrice {
+  padding-top: 10px;
+  font-size: large;
+}
+
+/*Product buttons*/
+.productAddButton,
+.productQuantityButton {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

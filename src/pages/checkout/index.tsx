@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getProductsById, ProductInfo } from '../api/product';
-import { LogoutButton } from '../components/LogoutButton/LogoutButton';
-import { NavBar } from '../components/NavBar/NavBar';
-import { ShoppingCart } from '../components/ShoppingCart/ShoppingCart';
-import { useShoppingCart } from '../context/ShoppingCartContext';
+import { getProductsById, ProductInfo } from '../../api/product';
+import { LogoutButton } from '../../components/LogoutButton/LogoutButton';
+import { NavBar } from '../../components/NavBar/NavBar';
+import { ShoppingCart } from '../../components/ShoppingCart/ShoppingCart';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 
-export function CheckoutPage() {
+export function CheckoutIndex() {
   const { cartItems } = useShoppingCart();
   const [productsCart, setProduct] = useState<ProductInfo[]>([]);
 

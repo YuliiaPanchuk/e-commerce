@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchProducts, likeProduct, ProductInfo } from '../../api/product';
-import { useLoginContext } from '../../context/LoginUserContext';
+import { useLoginContext } from '../../context/UserContext';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
 import { AddBtn } from '../AddBtn/AddBtn';

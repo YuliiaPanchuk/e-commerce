@@ -5,12 +5,16 @@ import './Footer.css';
 export function Footer() {
   return (
     <>
-      <section className='footerWrapper'>
-
+      <section className="footerWrapper">
         <div className="footer">
-        <div className="footerLabel">
-          <LogoFrame />
-        </div>
+          <div>
+            <iframe
+              className="mapLocation"
+              src="https://maps.google.com/maps?q=Malm%C3%B6&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameBorder="0"
+              style={{ border: 0 }}
+            />
+          </div>
           <div className="footerInfo">
             <p>Contact</p>
             <small>We are here to help</small>
@@ -44,3 +48,9 @@ export function Footer() {
     </>
   );
 }
+
+/*
+          <div className="footerLabel">
+            <LogoFrame />
+          </div>
+*/

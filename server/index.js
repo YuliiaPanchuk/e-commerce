@@ -17,7 +17,7 @@ app.post("/user/login", (req, res) => {
     return
   }
 
-  const userData = fs.readFileSync("./userData.json", "utf-8")
+  const userData = fs.readFileSync("./data/users.json", "utf-8")
   const json = JSON.parse(userData)
 
   const user = json.find((x) => x.name === userName && x.password === userPassword)
@@ -50,7 +50,7 @@ app.post("/user/register", (req, res) => {
     return
   }
 
-  const userData = fs.readFileSync("./userData.json", "utf-8")
+  const userData = fs.readFileSync("./data/users.json", "utf-8")
   const json = JSON.parse(userData)
 
   const user = json.find((x) => x.name === userName)
@@ -60,13 +60,13 @@ app.post("/user/register", (req, res) => {
   }
 
   json.push({ name: userName, password: userPassword, email: userEmail })
-  fs.writeFileSync("./userData.json", JSON.stringify(json, null, 2))
+  fs.writeFileSync("./data/users.json", JSON.stringify(json, null, 2))
   res.json({ text: "Saved data", success: true })
 })
 
 // get all products
 app.get('/product', (req, res) => {
-  const fileContent = fs.readFileSync("./data.json", "utf-8")
+  const fileContent = fs.readFileSync("./data/products.json", "utf-8")
   const json = JSON.parse(fileContent);
 
   // TODO: Filter/Sort
@@ -78,7 +78,7 @@ app.get('/product', (req, res) => {
 app.get('/product/:id', (req, res) => {
   const productId = req.params.id;
 
-  const fileContent = fs.readFileSync("./data.json", "utf-8")
+  const fileContent = fs.readFileSync("./data/products.json", "utf-8")
   const json = JSON.parse(fileContent);
 
   const product = json.find((x) => x.id === productId);
@@ -100,7 +100,7 @@ app.post("/product/like", (req, res) => {
     return
   }
 
-  const userData = fs.readFileSync("./liked.json", "utf-8")
+  const userData = fs.readFileSync("./data/liked.json", "utf-8")
   const json = JSON.parse(userData)
 
   const index = json.findIndex((x) => x.userName === userName && x.productId === productId)
@@ -118,7 +118,7 @@ app.post("/product/like", (req, res) => {
     json.splice(index, 1);
   }
 
-  fs.writeFileSync("./liked.json", JSON.stringify(json, null, 2))
+  fs.writeFileSync("./data/liked.json", JSON.stringify(json, null, 2))
 
   res.sendStatus(200)
 });
@@ -132,11 +132,11 @@ app.post("/product/liked", (req, res) => {
   }
 
   // read all the liked products
-  const fileContentLiked = fs.readFileSync("./liked.json", "utf-8")
+  const fileContentLiked = fs.readFileSync("./data/liked.json", "utf-8")
   const likedProducts = JSON.parse(fileContentLiked)
 
   // read all the products
-  const fileContentProducts = fs.readFileSync("./data.json", "utf-8")
+  const fileContentProducts = fs.readFileSync("./data/data.json", "utf-8")
   const products = JSON.parse(fileContentProducts);
 
   const liked = likedProducts

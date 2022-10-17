@@ -35,7 +35,7 @@ export function NavBarIcons() {
           </button>
         </li>
         <li>
-          <button className="navbarIconBtn" onClick={() => navigate('/login')}>
+          <button className="navbarIconBtn" onClick={() => navigate('/user')}>
             <UserProfile />
           </button>
         </li>

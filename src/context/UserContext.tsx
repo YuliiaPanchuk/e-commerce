@@ -1,18 +1,7 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useCallback,
-  useEffect,
-} from 'react';
+import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
 import { signIn as apiSignIn } from '../api/account';
 
-interface LoginUserProps {
-  children: ReactNode;
-}
-
-interface LoginUserContextProps {
+interface UserContext {
   user: {
     name: string;
     email: string;
@@ -22,13 +11,17 @@ interface LoginUserContextProps {
   signOut: () => void;
 }
 
-const LoginUserContext = createContext({} as LoginUserContextProps);
+const LoginUserContext = createContext({} as UserContext);
 
 export function useLoginContext() {
   return useContext(LoginUserContext);
 }
 
-export function LoginUserProvider({ children }: LoginUserProps) {
+interface UserProviderProps {
+  children: ReactNode;
+}
+
+export function UserProvider({ children }: UserProviderProps) {
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -51,10 +44,12 @@ export function LoginUserProvider({ children }: LoginUserProps) {
 
   // updates each time when cartItems updates
   useEffect(() => {
-    if (user) {
+    if (loggedIn) {
       localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      localStorage.removeItem('user');
     }
-  }, [user]);
+  }, [loggedIn, user]);
 
   const signIn = useCallback(
     (user: string, password: string, callback: (success: boolean) => void) => {
@@ -75,7 +70,6 @@ export function LoginUserProvider({ children }: LoginUserProps) {
   const signOut = useCallback(() => {
     setLoggedIn(false);
     setUser({ name: '', email: '' });
-    alert('Logged out');
   }, []);
 
   return (

@@ -41,6 +41,11 @@
   background-color: rgb(214, 209, 209);
 }
 
+.mapLocation {
+  width: 500px;
+  height: 300px;
+}
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
   .footerWrapper {

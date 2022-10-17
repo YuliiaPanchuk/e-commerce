@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signUp } from '../api/account';
-import { RegisterInputForm } from '../components/RegisterForm/RegisterInputForm';
-import { Login } from './Login';
+import { signUp } from '../../api/account';
+import { RegisterInputForm } from '../../components/RegisterForm/RegisterInputForm';
+import { Login } from '.';
 import './Register.css';
 
 export function Register() {
@@ -87,7 +87,7 @@ export function Register() {
           />
         ))}
         <button className="registerFormInputSubmit">Submit</button>
-        <button className="loginFormInputSubmit" onClick={() => navigate('/login')}>
+        <button className="loginFormInputSubmit" onClick={() => navigate('/user')}>
           Log in
         </button>
       </form>

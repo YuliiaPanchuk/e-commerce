@@ -1,12 +1,21 @@
 import React from 'react';
-import { useLoginContext } from '../../context/LoginUserContext';
+import { useNavigate } from 'react-router-dom';
+import { useLoginContext } from '../../context/UserContext';
 
 export function LogoutButton() {
-  const { signOut } = useLoginContext();
+  const { user, signOut } = useLoginContext();
+  const navigate = useNavigate();
+
+  function onLogout() {
+    signOut();
+    alert('Logged out');
+    navigate('/');
+  }
 
   return (
     <>
-      <button onClick={signOut}>Log out</button>
+      name: {user.name}
+      <button onClick={onLogout}>Log out</button>
     </>
   );
 }

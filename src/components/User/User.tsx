@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { likedProducts, ProductInfo } from '../../api/product';
-import { useLoginContext } from '../../context/LoginUserContext';
+import { useLoginContext } from '../../context/UserContext';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
 
 export function User() {

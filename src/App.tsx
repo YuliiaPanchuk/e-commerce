@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { SideShoppingContent } from './components/SideCartInfo/SideShoppingContent';
-import { LoginUserProvider } from './context/LoginUserContext';
+import { UserProvider } from './context/UserContext';
 import { ShoppingCartProvider, useShoppingCart } from './context/ShoppingCartContext';
-import { CheckoutPage } from './pages/CheckoutPage';
+import { CheckoutIndex } from './pages/checkout';
 import { Home } from './pages/Home';
-import { ItemDetails } from './pages/ItemDetails';
-import { LoggedinUser } from './pages/LoggedinUser';
-import { Login } from './pages/Login';
-import { Register } from './pages/Register';
+import { ProductIndex } from './pages/product';
+import { UserIndex } from './pages/profile';
+import { Login } from './pages/user';
+import { Register } from './pages/user/Register';
 import { Store } from './pages/Store';
 
 const useScrollToLocation = () => {
@@ -37,32 +37,43 @@ const useScrollToLocation = () => {
   });
 };
 
-function GlobalComponents() {
+function AppRouter() {
   const { isCartOpen, closeCart } = useShoppingCart();
   useScrollToLocation();
 
-  return <>{isCartOpen && <SideShoppingContent onClose={() => closeCart()} />}</>;
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {/* product pages */}
+        <Route path="/store" element={<Store />} />
+        <Route path="/product/:id" element={<ProductIndex />} />
+
+        {/* checkout pages */}
+        <Route path="/checkout" element={<CheckoutIndex />} />
+
+        {/* user pages */}
+        <Route path="/user" element={<Login />} />
+        <Route path="/user/register" element={<Register />} />
+
+        {/* profile pages */}
+        <Route path="/profile" element={<UserIndex />} />
+      </Routes>
+
+      {isCartOpen && <SideShoppingContent onClose={() => closeCart()} />}
+    </>
+  );
 }
 
 export function App() {
   return (
-    <LoginUserProvider>
+    <UserProvider>
       <ShoppingCartProvider>
-        <div className="app">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/store" element={<Store />} />
-              <Route path="/checkout" element={<CheckoutPage />} />
-              <Route path="/product/:id" element={<ItemDetails />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/user" element={<LoggedinUser />} />
-            </Routes>
-            <GlobalComponents />
-          </BrowserRouter>
-        </div>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
       </ShoppingCartProvider>
-    </LoginUserProvider>
+    </UserProvider>
   );
 }

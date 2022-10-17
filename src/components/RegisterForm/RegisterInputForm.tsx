@@ -11,18 +11,16 @@ export function RegisterInputForm(props: any) {
 
   return (
     <div className="formInput">
-      <label className='formInputLabel'>{label}</label>
+      <label className="formInputLabel">{label}</label>
       <input
-        className='formInputInput'
+        className="formInputInput"
         {...inputProps}
         onChange={onChange}
         onBlur={handleFocus}
-        onFocus={() =>
-          inputProps.name === "confirmPassword" && setFocused(true)
-        }
+        onFocus={() => inputProps.name === 'confirmPassword' && setFocused(true)}
         focused={focused.toString()}
       />
-      <span className='formInputError'>{errorMessage}</span>
+      <span className="formInputError">{errorMessage}</span>
     </div>
   );
 }

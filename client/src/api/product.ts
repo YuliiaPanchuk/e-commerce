@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'http://localhost:3001';
+import { API_ENDPOINT } from './config';
 
 export type ProductInfo = {
   product_id: string;

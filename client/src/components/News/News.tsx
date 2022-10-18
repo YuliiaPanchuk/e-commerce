@@ -3,7 +3,7 @@ import './News.css';
 
 export function News() {
   return (
-    <div id='news'>
+    <div id="news">
       <section className="newsWrapper">
         <div className="newsBlock">
           <div className="imageNews">
@@ -29,15 +29,15 @@ export function News() {
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
-          
+
           <div className="imageNews">
-            <img src="/images/newsTwo.jpg" alt="news" />
+            <img src="/images/NewsTwo.jpg" alt="news" />
           </div>
         </div>
 
         <div className="newsBlock">
           <div className="imageNews">
-          <img src="/images/newsTwo.jpg" alt="news" />
+            <img src="/images/NewsTwo.jpg" alt="news" />
           </div>
 
           <div className="textNews">

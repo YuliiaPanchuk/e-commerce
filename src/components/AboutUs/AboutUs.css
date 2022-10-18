@@ -3,40 +3,47 @@
   display: flex;
 }
 
-.aboutUsLeftContainer {
+.AboutUs__Left {
   width: 40%;
   background-color: black;
   position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.aboutUsRightContainer {
+.AboutUs__Right {
   width: 60%;
   background-color: #fff;
   position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutUsImages {
-  margin: 200px 0 0 300px;
-  width: 32%;
-  height: 70%;
+  width: 75%;
   columns: 2 100px;
-  position: absolute;
+  margin-right: -15%;
+  margin-top: 1.5rem;
+  z-index: 1;
 }
 
 .aboutUsImageContainer {
   margin-block-end: 1.5rem;
-
 }
 
 .aboutUsImageContainer img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .aboutUsText {
-  position: absolute;
-  width: 26%;
-  right: 20%;
-  margin-top: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }
 
 .aboutUsText h1 {
@@ -54,16 +61,20 @@
 @media (max-width: 576px) {
   #aboutUs {
     height: auto;
+    flex-direction: column;
+  }
+
+  .AboutUs__Left {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .AboutUs__Right {
+    width: 100%;
   }
 
   .aboutUsImages {
-    width: 68%;
-    margin: 20px;
-    height: 142px;
-  }
-
-  .aboutUsImageContainer {
-    width: 50%;
+    margin-right: 0;
   }
 
   .aboutUsText {
@@ -79,49 +90,39 @@
     font-size: 12px;
     line-height: 12px;
   }
-
-
 }
 
-@media (min-width: 577px) and (max-width: 768px) {
-  .aboutUsImages {
-    margin: 20px 0 0 30px;
-    width: 38%;
+@media (min-width: 577px) and (max-width: 992px) {
+  .AboutUs__Left {
+    justify-content: center;
   }
 
-  .aboutUsText h1 {
-    font-size: 26px;
-    margin-bottom: 10px;
+  .aboutUsImages {
+    columns: 2 75px;
+    margin-right: 0;
   }
 
   .aboutUsText {
-    width: 46%;
-    right: 40px;
-    margin-top: 10px;
+    width: 90%;
+  }
+
+  .aboutUsText h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .aboutUsText p {
-    font-size: 16px;
+    font-size: 12px;
+    line-height: 1.6;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1800px) {
-
-  .aboutUsImages {
-    margin: 54px 0 0 80px;
-    height: 74%;
+@media (min-width: 992px) and (max-width: 1200px) {
+  .aboutUsText {
+    width: 70%;
   }
 
   .aboutUsText h1 {
     font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .aboutUsText {
-    font-size: 16px;
-    width: 44%;
-    right: 40px;
-    margin-top: 50px;
-    text-align: center;
   }
 }

@@ -1,7 +1,10 @@
 .ProductCard {
   background-color: #fff;
-  height: 450px;
+  height: 500px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .likeIcon {
@@ -15,13 +18,14 @@
 }
 
 /*Product image*/
-.imageWrapper {
-  display: flex;
-  justify-content: center;
+.ProductCard__Image {
+  padding: 16px;
+  padding-bottom: 0;
 }
 
-.imageWrapper img {
-  width: 230px;
+.ProductCard__Image img {
+  width: 100%;
+  height: 100%;
 }
 
 /*Product text*/

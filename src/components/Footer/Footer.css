@@ -48,6 +48,10 @@
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
+  .mapLocation {
+    width: auto;
+  }
+
   .footerWrapper {
     height: auto;
   }
@@ -73,6 +77,10 @@
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
+  .mapLocation {
+    width: auto;
+  }
+
   .footer {
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;

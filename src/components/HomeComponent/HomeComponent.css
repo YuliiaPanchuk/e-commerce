@@ -35,7 +35,17 @@
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
   .homeWrapper {
-    height: auto;
+    height: 100vw;
+  }
+
+  .leftHomeBox {
+    display: none;
+  }
+
+  .mainHomeImage {
+    height: 100vw;
+    width: 100%;
+    background-position-y: center;
   }
 
   .mainHeader h1 {
@@ -44,13 +54,22 @@
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
+  .leftHomeBox {
+    display: none;
+  }
+
+  .mainHomeImage {
+    height: 100vw;
+    width: 100%;
+    background-position-y: center;
+  }
+
   .mainHeader h1 {
     font-size: 20px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1800px) {
-
   .mainHeader {
     font-size: 20px;
   }

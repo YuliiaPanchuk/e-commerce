@@ -124,7 +124,7 @@ app.get('/product/:id', (req, res) => {
   const fileContent = fs.readFileSync("./data/products.json", "utf-8")
   const json = JSON.parse(fileContent);
 
-  const product = json.find((x) => x.id === productId);
+  const product = json.find((x) => String(x.id) === productId);
   if (product) {
     res.json(product);
   } else {

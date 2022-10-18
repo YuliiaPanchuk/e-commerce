@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { SideShoppingContent } from './components/SideCartInfo/SideShoppingContent';
 import { UserProvider } from './context/UserContext';
 import { ShoppingCartProvider, useShoppingCart } from './context/ShoppingCartContext';
 import { CheckoutIndex } from './pages/checkout';
@@ -12,6 +11,9 @@ import { Register } from './pages/user/Register';
 import { Store } from './pages/Store';
 
 import './App.css';
+import { CreditCart } from './components/CreditCart/CreditCart';
+import { Sidebar } from './components/layout/Sidebar/Sidebar';
+import { SideShoppingContent } from './components/cart/CartSidebar/SideShoppingContent';
 
 const useScrollToLocation = () => {
   const scrolledRef = React.useRef(false);
@@ -40,7 +42,7 @@ const useScrollToLocation = () => {
 };
 
 function AppRouter() {
-  const { isCartOpen, closeCart } = useShoppingCart();
+  const { isCartOpen, openCart, closeCart } = useShoppingCart();
   useScrollToLocation();
 
   return (
@@ -61,9 +63,14 @@ function AppRouter() {
 
         {/* profile pages */}
         <Route path="/profile" element={<UserIndex />} />
+
+        {/* credit cart pages */}
+        <Route path="/creditCart" element={<CreditCart />} />
       </Routes>
 
-      {isCartOpen && <SideShoppingContent onClose={() => closeCart()} />}
+      <Sidebar isOpen={isCartOpen} onClose={() => closeCart()}>
+        <SideShoppingContent onClose={() => closeCart()} />
+      </Sidebar>
     </>
   );
 }

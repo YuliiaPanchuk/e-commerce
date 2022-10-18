@@ -1,0 +1,47 @@
+.Sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(18, 18, 18, 0.8);
+  /*the same as opacity: 0.8*/
+  z-index: 1000;
+  transition: all 250ms;
+
+  display: flex;
+}
+
+.Sidebar--is-hidden {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.Sidebar__Overlay {
+  flex: 1;
+}
+
+.Sidebar__Content {
+  flex: 1;
+  max-width: 20%;
+  background-color: #f6f4f2;
+  position: relative;
+}
+
+@media (max-width: 576px) {
+  .Sidebar__Content {
+    max-width: auto;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .Sidebar__Content {
+    max-width: 42%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1800px) {
+  .Sidebar__Content {
+    max-width: 50%;
+  }
+}

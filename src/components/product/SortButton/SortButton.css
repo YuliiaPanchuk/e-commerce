@@ -1,6 +1,5 @@
 .SortButton {
   position: relative;
-  z-index: 15;
 }
 
 .SortButton select {

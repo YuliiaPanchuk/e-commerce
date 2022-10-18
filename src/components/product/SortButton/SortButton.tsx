@@ -2,6 +2,8 @@ import React from 'react';
 import './SortButton.css';
 
 export interface SortButtonProps {
+  value: string;
+
   sortBy: {
     text: string;
     value: string;
@@ -10,12 +12,12 @@ export interface SortButtonProps {
   onChange?: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
-export function SortButton({ sortBy, onChange }: SortButtonProps) {
+export function SortButton({ value, sortBy, onChange }: SortButtonProps) {
   return (
     <div className="SortButton">
       <select onChange={onChange}>
         {sortBy.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option key={option.value} value={option.value} selected={value === option.value}>
             {option.text}
           </option>
         ))}

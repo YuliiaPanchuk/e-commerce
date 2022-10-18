@@ -60,7 +60,7 @@ export function CreditCart() {
     <section>
       <div>
         <form className="registerForm">
-          <h1 className="registerFormText">Register</h1>
+          <h1 className="registerFormText">Payment method</h1>
           {inputs.map((input) => (
             <RegisterInputForm
               key={input.id}

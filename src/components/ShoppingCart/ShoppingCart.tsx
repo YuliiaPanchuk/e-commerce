@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getProductsById, ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
@@ -114,7 +115,9 @@ export function ShoppingCart({ products }: ShoppingCartProps) {
             <p>{totalPrice}</p>
           </div>
 
-          <button className="continueToCheckout">Continue to checkout</button>
+          <Link to="/creditCart">
+            <button className="continueToCheckout">Continue to checkout</button>
+          </Link>
 
           <div className="secureCheckout">
             <small>

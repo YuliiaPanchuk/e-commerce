@@ -1,0 +1,50 @@
+.AddToCart {
+  flex: 0;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.AddToCart__Single {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 16px 0;
+  background-color: #fff;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.AddToCart__Many {
+  display: flex;
+}
+
+.AddToCart__Many button {
+  flex: 0 0;
+  flex-basis: 64px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  background-color: #fff;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 16px 0;
+}
+
+.AddToCart__Many input {
+  flex: 1;
+  width: 32px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  background-color: #fff;
+  border: 1px solid;
+  border-left: 0;
+  border-right: 0;
+  text-align: center;
+}
+
+.AddToCart__Many input:focus {
+  outline: none;
+}

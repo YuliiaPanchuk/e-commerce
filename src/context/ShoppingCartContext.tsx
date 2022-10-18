@@ -20,6 +20,7 @@ type ShoppingCartContex = {
   openCart: () => void;
   closeCart: () => void;
   getItemQuantity: (id: string) => number;
+  setCartQuantity: (id: string, quantity: number) => void;
   increaseCartQuantity: (id: string) => void;
   decreaseCartQuantity: (id: string) => void;
   removeFromCart: (id: string) => void;
@@ -78,6 +79,26 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
+  function setCartQuantity(id: string, quantity: number) {
+    setCartItems((currItems) => {
+      const index = currItems.findIndex((item) => item.id === id);
+
+      // add new product
+      if (index === -1) {
+        return [...currItems, { id, quantity }];
+      }
+
+      // update a product
+      if (quantity <= 0) {
+        return currItems.filter((_, i) => i !== index);
+      } else {
+        currItems[index].quantity = quantity;
+      }
+
+      return [...currItems];
+    });
+  }
+
   function increaseCartQuantity(id: string) {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
@@ -120,6 +141,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     <ShoppingCartContext.Provider
       value={{
         getItemQuantity,
+        setCartQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,

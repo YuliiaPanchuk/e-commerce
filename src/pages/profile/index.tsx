@@ -50,7 +50,7 @@ export function UserIndex() {
           </Section>
         </Container>
 
-        <CreditCart />
+        {/*<CreditCart />*/}
       </div>
 
       <Footer />

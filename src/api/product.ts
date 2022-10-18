@@ -3,6 +3,7 @@ const API_ENDPOINT = 'http://localhost:3001';
 export type ProductInfo = {
   product_id: string;
   image_url: string;
+  product_short_description: string;
   product_description: string;
   product_name: string;
   product_price: number;
@@ -52,6 +53,7 @@ export async function apiFetchProducts(
       return {
         product_id: x.id,
         image_url: x.image_url,
+        product_short_description: x.short_description,
         product_description: x.description,
         product_name: x.name,
         product_price: Number(x.price),
@@ -81,6 +83,7 @@ export async function getProductById(product_id: string): Promise<ProductInfo | 
   return {
     product_id,
     image_url: x.image_url,
+    product_short_description: x.short_description,
     product_description: x.description,
     product_name: x.name,
     product_price: Number(x.price),
@@ -89,7 +92,9 @@ export async function getProductById(product_id: string): Promise<ProductInfo | 
 }
 
 export async function getProductsById(product_ids: string[]) {
-  return Promise.all(product_ids.map((item) => getProductById(item)).filter((x) => !!x));
+  return Promise.all(product_ids.map((item) => getProductById(item))).then((data) =>
+    data.filter((x) => !!x),
+  );
 }
 
 export async function likeProduct(
@@ -128,5 +133,14 @@ export async function apiLikedProducts(username: string): Promise<ProductInfo[]>
   });
 
   const data = await response.json();
-  return data;
+  return data.map((x: any) => ({
+    product_id: x.id,
+    image_url: x.image_url,
+    product_short_description: x.short_description,
+    product_description: x.description,
+    product_name: x.name,
+    product_price: Number(x.price),
+    product_link: x.link,
+    user_liked: x.user_liked,
+  }));
 }

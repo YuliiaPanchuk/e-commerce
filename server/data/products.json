@@ -1,65 +1,234 @@
 [
   {
-    "id": "CjEVHZlODEoIp255Y4bX",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1109786_TheRitualofSakuraFoamingShowerGel50mlPRO?resMode=sharp2&fmt=png-alpha&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
+    "id": 1,
+    "name": "Like A Latte",
+    "short_description": "Like a latte is the most popular espresso-based drink in the...",
+    "description": "Like a latte is the most popular espresso-based drink in the world. It's easy to make and it could become your favorite drink too.",
+    "image_url": "/images/products/product_1.png",
     "price": 200
   },
   {
-    "id": "EFOXTYP40pJ1Ib35a3DI",
-    "name": "Hand Mask",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1105147_TheRitualofJingOvernightHandMask70mlPRO-1?resMode=sharp2&fmt=png-alpha&wid=584",
-    "description": "hand mask, 70 ml",
+    "id": 2,
+    "name": "Juicy Coffee",
+    "short_description": "A delicious, comforting and energizing beverage that doesn't...",
+    "description": "A delicious, comforting and energizing beverage that doesn't compromise on taste.",
+    "image_url": "/images/products/product_1.png",
+    "price": 250
+  },
+  {
+    "id": 3,
+    "name": "Early Hours Coffee",
+    "short_description": "An early morning coffee is the perfect way to start your day...",
+    "description": "An early morning coffee is the perfect way to start your day. But the best part is that you can enjoy it without having to rise at 4am.",
+    "image_url": "/images/products/product_1.png",
+    "price": 300
+  },
+  {
+    "id": 4,
+    "name": "Sweet Beans",
+    "short_description": "A remarkable caffeine-free coffee substitute...",
+    "description": "A remarkable caffeine-free coffee substitute. Sweet Beans are the perfect coffee substitute for those who want to enjoy coffee without the caffeine crash.",
+    "image_url": "/images/products/product_1.png",
+    "price": 250
+  },
+  {
+    "id": 5,
+    "name": "Coffee Allure",
+    "short_description": "If you want to brew coffee like a pro, you'll want to be sur...",
+    "description": "If you want to brew coffee like a pro, you'll want to be sure you're using the best coffee beans and the right way to prepare them.",
+    "image_url": "/images/products/product_1.png",
+    "price": 150
+  },
+  {
+    "id": 6,
+    "name": "Sugar-Coated Coffee",
+    "short_description": "Sugar-Coated Coffee is a delicious and refreshing coffee...",
+    "description": "Sugar-Coated Coffee is a delicious and refreshing coffee drink that tastes delicious and is great for coffee lovers.",
+    "image_url": "/images/products/product_1.png",
     "price": 200
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 7,
+    "name": "Aramona",
+    "short_description": "Aromona Coffee is the perfect blend of rich and flavorful co...",
+    "description": "Aromona Coffee is the perfect blend of rich and flavorful coffee, including chocolate and caramel flavors.",
+    "image_url": "/images/products/product_1.png",
+    "price": 300
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX1",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 8,
+    "name": "Jamocha",
+    "short_description": "The ultimate hot chocolate drink, this dark chocolate carame...",
+    "description": "The ultimate hot chocolate drink, this dark chocolate caramel coffee is a perfect winter warmer.",
+    "image_url": "/images/products/product_1.png",
+    "price": 230
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX2",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 9,
+    "name": "Espresso",
+    "short_description": "Espresso is the drink of the gods. The simple act of pouring...",
+    "description": "Espresso is the drink of the gods. The simple act of pouring some hot water over ground coffee beans and then waiting a few minutes for it to brew is magical.",
+    "image_url": "/images/products/product_1.png",
+    "price": 340
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX3",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 10,
+    "name": "Bold Brew",
+    "short_description": "Bold coffees are often affiliated with dark roasts which ten...",
+    "description": "Bold coffees are often affiliated with dark roasts which tend to exhibit an intensity of roasty, carbony, and smoky flavors.",
+    "image_url": "/images/products/product_1.png",
+    "price": 350
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX4",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 11,
+    "name": "Ocean Coffee",
+    "short_description": "These beans are sun-dried and come with a distinctive, earth...",
+    "description": "These beans are sun-dried and come with a distinctive, earthy, full-bodied flavour recurring cyclically, and an eerie dark crema, reminiscent of sweet sandalwood on one hand, and a fine, barely noticeable acidity on the other.",
+    "image_url": "/images/products/product_1.png",
+    "price": 200
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX5",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 12,
+    "name": "Café au lait",
+    "short_description": "Can be made by adding steamed milk to a shot of espresso in...",
+    "description": "Can be made by adding steamed milk to a shot of espresso in a 1:1 ratio. The drink is topped with little or no foam",
+    "image_url": "/images/products/product_1.png",
+    "price": 390
   },
   {
-    "id": "JiV3na7obfjZoTgwNnCX6",
-    "name": "Body Cream",
-    "image_url": "https://rituals.scene7.com/is/image/rituals/1114161_bodycream-220ml-1?resMode=sharp2&fmt=png-alpha&crop=1250,750,4500,4500&wid=1000",
-    "description": "Our best-selling body cream from The Ritual of Sakura",
-    "price": 60
+    "id": 13,
+    "name": "ChocoCoffee",
+    "short_description": "ChocoCoffee is a delicious hot chocolate beverage. It is a r...",
+    "description": "ChocoCoffee is a delicious hot chocolate beverage. It is a rich, creamy, and chocolaty drink that you'll want to make often!",
+    "image_url": "/images/products/product_1.png",
+    "price": 290
+  },
+  {
+    "id": 14,
+    "name": "Coffee Tonic",
+    "short_description": "Coffee Tonic is a soothing elixir that can be enjoyed in the...",
+    "description": "Coffee Tonic is a soothing elixir that can be enjoyed in the morning or as a pick-me-up any time of day.",
+    "image_url": "/images/products/product_1.png",
+    "price": 280
+  },
+  {
+    "id": 15,
+    "name": "Cocoa Deli",
+    "short_description": "A dark roast coffee is made with a high proportion of coffee...",
+    "description": "A dark roast coffee is made with a high proportion of coffee beans that are roasted darkly.",
+    "image_url": "/images/products/product_1.png",
+    "price": 270
+  },
+  {
+    "id": 16,
+    "name": "Decoction",
+    "short_description": "Decoction is a way of making a cup of coffee without boiling...",
+    "description": "Decoction is a way of making a cup of coffee without boiling the beans themselves.",
+    "image_url": "/images/products/product_1.png",
+    "price": 310
+  },
+  {
+    "id": 17,
+    "name": "Cocoa Master",
+    "short_description": "Cocoa Master is a coffee that's made with a special brew pro...",
+    "description": "Cocoa Master is a coffee that's made with a special brew process.",
+    "image_url": "/images/products/product_1.png",
+    "price": 260
+  },
+  {
+    "id": 18,
+    "name": "Royal Made Coffee",
+    "short_description": "Royal Made Coffee is a great tasting coffee with no negative...",
+    "description": "Royal Made Coffee is a great tasting coffee with no negative side effects.",
+    "image_url": "/images/products/product_1.png",
+    "price": 340
+  },
+  {
+    "id": 19,
+    "name": "Lemonini",
+    "short_description": "Lemonini is a coffee drink made with espresso and lemonade. ...",
+    "description": "Lemonini is a coffee drink made with espresso and lemonade. If you're looking for a refreshing drink that's both sweet and tangy, this is a great option.",
+    "image_url": "/images/products/product_1.png",
+    "price": 220
+  },
+  {
+    "id": 20,
+    "name": "Espresso Express",
+    "short_description": "This is a slightly more elaborate than the usual espresso re...",
+    "description": "This is a slightly more elaborate than the usual espresso recipe, with a bit of milk, and a little more flavor.",
+    "image_url": "/images/products/product_1.png",
+    "price": 220
+  },
+  {
+    "id": 21,
+    "name": "Exotic Coffee",
+    "short_description": "Exotic Coffee is a guide to the world of coffee. It includes...",
+    "description": "Exotic Coffee is a guide to the world of coffee. It includes information on the history of coffee, information on the different types of coffee,",
+    "image_url": "/images/products/product_1.png",
+    "price": 230
+  },
+  {
+    "id": 22,
+    "name": "Cappuccino",
+    "short_description": "Cappuccino is a traditional Italian coffee drink. It consist...",
+    "description": "Cappuccino is a traditional Italian coffee drink. It consists of espresso and steamed milk, topped with foamed milk.",
+    "image_url": "/images/products/product_1.png",
+    "price": 190
+  },
+  {
+    "id": 23,
+    "name": "Coffea arabica",
+    "short_description": "Arabica beans are by far the most popular type of coffee...",
+    "description": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world...s coffee.",
+    "image_url": "/images/products/product_1.png",
+    "price": 240
+  },
+  {
+    "id": 24,
+    "name": "Coffea caniphora",
+    "short_description": "This bean originated in sub-Saharan Africa and is now...",
+    "description": "This bean originated in sub-Saharan Africa and is now grown primarily in Africa and Indonesia.",
+    "image_url": "/images/products/product_1.png",
+    "price": 310
+  },
+  {
+    "id": 25,
+    "name": "Coffea liberica",
+    "short_description": "Coffea liberica is prized for its piquant floral aroma and b...",
+    "description": "Coffea liberica is prized for its piquant floral aroma and bold, smoky flavor profile.",
+    "image_url": "/images/products/product_1.png",
+    "price": 250
+  },
+  {
+    "id": 26,
+    "name": "Coffea excelsa",
+    "short_description": "In terms of flavor, Excelsa beans are pretty unique. They co...",
+    "description": "In terms of flavor, Excelsa beans are pretty unique. They combine light roast traits like tart notes and fruity flavors with flavors that are more reminiscent of dark roasts.",
+    "image_url": "/images/products/product_1.png",
+    "price": 260
+  },
+  {
+    "id": 27,
+    "name": "Catimor Beans",
+    "short_description": "A hybrid cross between Timor and Caturra coffee beans...",
+    "description": "A hybrid cross between Timor and Caturra coffee beans, Catimor strains are mostly found in El Salvador, Nicaragua and India.",
+    "image_url": "/images/products/product_1.png",
+    "price": 280
+  },
+  {
+    "id": 28,
+    "name": "Catuai Beans",
+    "short_description": "Catuai coffee bean has numerous variations and features some...",
+    "description": "Catuai coffee bean has numerous variations and features some of the better qualities of a good Brazilian coffee.",
+    "image_url": "/images/products/product_1.png",
+    "price": 200
+  },
+  {
+    "id": 29,
+    "name": "Jember Beans",
+    "short_description": "ember coffee beans are full-bodied and rich, and their taste...",
+    "description": "ember coffee beans are full-bodied and rich, and their taste is like a combination of caramel, maple and brown sugar.",
+    "image_url": "/images/products/product_1.png",
+    "price": 250
   }
 ]

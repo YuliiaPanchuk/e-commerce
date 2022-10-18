@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { FetchProductsParams } from '../../../api/product';
 import { useLoginContext } from '../../../context/UserContext';
 import { Container, ContainerVariant } from '../../layout/Container/Container';
@@ -26,20 +26,31 @@ export function SearchSettings({ productCount, productTotal, onSearch }: SearchS
   const [searchValue, setSearchValue] = useState('');
   const [sortByValue, setSortByValue] = useState('fromAtoZ');
 
+  const lastSearchParamsJSON = useRef('');
+
   const onChange = useCallback(() => {
-    onSearch &&
-      onSearch({
-        search: searchValue,
-        sortBy: sortByValue,
-        username: user.name,
-      });
+    const newSearchParams = {
+      search: searchValue,
+      sortBy: sortByValue,
+      username: user.name,
+    };
+
+    const newSearchParamsJSON = JSON.stringify(newSearchParams);
+    if (newSearchParamsJSON !== lastSearchParamsJSON.current) {
+      lastSearchParamsJSON.current = newSearchParamsJSON;
+      onSearch && onSearch(newSearchParams);
+    }
   }, [onSearch, searchValue, sortByValue, user.name]);
 
   useEffect(() => onChange(), [onChange, user.name]);
 
   return (
     <Container variant={ContainerVariant.ProductFilter}>
-      <SortButton sortBy={sortBy} onChange={(e) => setSortByValue(e.target.value)} />
+      <SortButton
+        value={sortByValue}
+        sortBy={sortBy}
+        onChange={(e) => setSortByValue(e.target.value)}
+      />
       <SearchBar
         placeholder="Search..."
         value={searchValue}

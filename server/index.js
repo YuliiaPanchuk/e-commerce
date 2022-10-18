@@ -194,6 +194,10 @@ app.post('/product/liked', (req, res) => {
   res.json(liked);
 });
 
+app.get("/", (_req, res) => {
+  res.send("OK");
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

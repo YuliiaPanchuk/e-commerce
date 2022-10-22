@@ -45,6 +45,8 @@ function AppRouter() {
   const { isCartOpen, closeCart } = useShoppingCart();
   const { closeLogin, isLogInState } = useLoginContext();
 
+  useScrollToLocation();
+
   return (
     <>
       <Routes>

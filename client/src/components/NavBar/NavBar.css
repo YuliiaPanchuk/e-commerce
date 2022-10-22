@@ -20,10 +20,19 @@
   font-size: 20px;
   letter-spacing: 0.3px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 .navBarLi a:hover {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+.navBarAbsolute .navBarLi a {
+  color: #fff;
+}
+
+.navBarAbsolute .navBarLi a:hover {
   color: #efedea;
   border-bottom: 1px solid #efedea;
 }

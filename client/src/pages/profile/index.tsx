@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiLikedProducts, ProductInfo } from '../../api/product';
-import { CreditCart } from '../../components/CreditCart/CreditCart';
 import { Footer } from '../../components/Footer/Footer';
 import { Container, ContainerVariant } from '../../components/layout/Container/Container';
 import { Section } from '../../components/layout/Section/Section';
@@ -38,7 +37,9 @@ export function UserIndex() {
       <NavBar />
 
       <div>
-        <LogoutButton />
+        <Container>
+          <LogoutButton />
+        </Container>
 
         <Container>
           <Section title="My Liked Products">

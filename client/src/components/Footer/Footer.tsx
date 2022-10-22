@@ -7,7 +7,7 @@ export function Footer() {
     <>
       <section className="footerWrapper">
         <div className="footer">
-          <div>
+          <div className="location">
             <iframe
               className="mapLocation"
               src="https://maps.google.com/maps?q=Malm%C3%B6&t=&z=13&ie=UTF8&iwloc=&output=embed"

@@ -1,6 +1,12 @@
 import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
 import { signIn as apiSignIn } from '../api/account';
 
+export enum LoginState {
+  None,
+  Login,
+  Register,
+}
+
 interface UserContext {
   user: {
     name: string;
@@ -9,6 +15,9 @@ interface UserContext {
   loggedIn: boolean;
   signIn: (user: string, password: string, callback: (success: boolean) => void) => void;
   signOut: () => void;
+  showLogIn: (state: LoginState) => void;
+  closeLogin: () => void;
+  isLogInState: LoginState;
 }
 
 const LoginUserContext = createContext({} as UserContext);
@@ -27,6 +36,7 @@ export function UserProvider({ children }: UserProviderProps) {
     email: '',
   });
   const [loggedIn, setLoggedIn] = useState(false);
+  const [state, setState] = useState(LoginState.None);
 
   // check if user is logged in on load
   useEffect(() => {
@@ -72,6 +82,9 @@ export function UserProvider({ children }: UserProviderProps) {
     setUser({ name: '', email: '' });
   }, []);
 
+  const showLogIn = (state: LoginState) => setState(state);
+  const closeLogin = () => setState(LoginState.None);
+
   return (
     <LoginUserContext.Provider
       value={{
@@ -79,6 +92,9 @@ export function UserProvider({ children }: UserProviderProps) {
         loggedIn,
         signIn,
         signOut,
+        isLogInState: state,
+        showLogIn,
+        closeLogin,
       }}
     >
       {children}

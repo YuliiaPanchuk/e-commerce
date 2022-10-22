@@ -17,12 +17,16 @@
 
 .shoppingCartWhiteBlock {
   background-color: #fff;
-  /*width: 30%;*/
   margin: 0 auto;
 }
 
 .shoppingCartWhiteBlockContent {
   padding: 0 10px;
+}
+
+.yourItemsShoppingCart {
+  padding: 30px 44px;
+  text-transform: uppercase;
 }
 
 .shoppingCartTitle {
@@ -86,7 +90,8 @@
 .summaryText {
   font-size: 20px;
   letter-spacing: 1px;
-  margin: 10px 0;
+  margin: 14px 0;
+  padding: 0 20px;
 }
 
 .shippingOptions {

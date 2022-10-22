@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLoginContext } from '../../context/UserContext';
+import { LoginState, useLoginContext } from '../../context/UserContext';
 import './LoginForm.css';
 
 export function LoginForm() {
@@ -46,7 +46,10 @@ export function LoginForm() {
         />
 
         <button className="loginFormInputSubmit">Log in</button>
-        <button className="registerFormInputSubmit" onClick={() => navigate('/user/register')}>
+        <button
+          className="registerFormInputSubmit"
+          onClick={() => user.showLogIn(LoginState.Register)}
+        >
           Register
         </button>
       </form>

@@ -22,7 +22,7 @@
   line-height: 26px;
   letter-spacing: 1px;
   word-spacing: .5px;
-  text-align: justify;
+  text-align: center;
   padding-top: 20px;
   font-size: 20px;
 }
@@ -66,11 +66,29 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1800px) {
+@media (min-width: 768px) and (max-width: 993px) {
 
   .sectionWrapper {
     height: auto;
-    grid-template-columns: repeat(2, 258px);
+    grid-template-columns: repeat(3, 210px);
     gap: 40px;
+  }
+}
+
+@media (min-width: 994px) and (max-width: 1800px) {
+
+  .sectionWrapper {
+    height: auto;
+    grid-template-columns: repeat(3, 290px);
+    width: auto;
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .sectionDescribtion {
+    font-size: 16px;
   }
 }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ClosingIcon } from './ClosingIcon';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './SideShoppingContent.css';
 import { getProductsById, ProductInfo } from '../../../api/product';
 import { useShoppingCart } from '../../../context/ShoppingCartContext';
 import { ShoppingCartSide } from '../../ShoppingCartSide/ShoppingCartSide';
+import { formatCurrency } from '../../../utilities/formatCurrency';
 
 type SideShoppingContentProps = {
   onClose: () => void;
@@ -50,7 +50,7 @@ export function SideShoppingContent({ onClose }: SideShoppingContentProps) {
           <div className="miniCartFooter">
             <div className="miniCartFooterText">
               <p className="miniCartFooterPiceText">Order total: </p>
-              <p className="miniCartFooterPice">{totalProductsPrice}</p>
+              <p className="miniCartFooterPice">{formatCurrency(totalProductsPrice)}</p>
             </div>
 
             <div className="miniCartFooterDeliveryText">

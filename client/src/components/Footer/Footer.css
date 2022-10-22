@@ -118,6 +118,15 @@
   .footer {
     width: 100%;
     margin-left: 0;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  .location {
+    margin: 0 auto;
+  }
+
+  .mapLocation {
+    max-width: 300px;
+    max-height: 200px;
   }
 }

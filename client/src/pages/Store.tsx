@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { apiFetchProducts, FetchProductsParams, ProductInfo } from '../api/product';
 import { Footer } from '../components/Footer/Footer';
 import { Container, ContainerVariant } from '../components/layout/Container/Container';
 import { NavBar } from '../components/NavBar/NavBar';
 import { ProductCard } from '../components/product/ProductCard/ProductCard';
-import { SearchBar } from '../components/product/SearchBar/SearchBar';
 import { UppBtn } from '../components/ScrollButton/UppBtn';
-import { SortButton } from '../components/product/SortButton/SortButton';
 import { SearchSettings } from '../components/product/SearchSettings/SearchSettings';
 
 export function Store() {

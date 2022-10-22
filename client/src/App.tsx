@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { UserProvider } from './context/UserContext';
+import { LoginState, useLoginContext, UserProvider } from './context/UserContext';
 import { ShoppingCartProvider, useShoppingCart } from './context/ShoppingCartContext';
 import { CheckoutIndex } from './pages/checkout';
 import { Home } from './pages/Home';
@@ -42,8 +42,8 @@ const useScrollToLocation = () => {
 };
 
 function AppRouter() {
-  const { isCartOpen, openCart, closeCart } = useShoppingCart();
-  useScrollToLocation();
+  const { isCartOpen, closeCart } = useShoppingCart();
+  const { closeLogin, isLogInState } = useLoginContext();
 
   return (
     <>
@@ -70,6 +70,14 @@ function AppRouter() {
 
       <Sidebar isOpen={isCartOpen} onClose={() => closeCart()}>
         <SideShoppingContent onClose={() => closeCart()} />
+      </Sidebar>
+
+      <Sidebar isOpen={isLogInState === LoginState.Login} onClose={() => closeLogin()}>
+        <Login />
+      </Sidebar>
+
+      <Sidebar isOpen={isLogInState === LoginState.Register} onClose={() => closeLogin()}>
+        <Register />
       </Sidebar>
     </>
   );

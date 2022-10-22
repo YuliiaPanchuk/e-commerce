@@ -83,6 +83,10 @@
   letter-spacing: 1px;
 }
 
+.miniCartSmallTitle {
+  width: 164px;
+}
+
 .miniCartSmallHeader {
   color: #865;
   font-size: 10px;

@@ -14,8 +14,7 @@ export function WhyUs() {
           <QualityIcon />
           <p className="sectionTitle">Best Quality</p>
           <p className="sectionDescribtion">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            We prioritise quality and taste to create better coffee experiences for our customers.
           </p>
         </div>
 
@@ -23,8 +22,8 @@ export function WhyUs() {
           <CardIcon />
           <p className="sectionTitle">Money secure</p>
           <p className="sectionDescribtion">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            3D Secure is an additional layer of security for online credit and debit card
+            transactions with an authentication step.
           </p>
         </div>
 
@@ -32,8 +31,8 @@ export function WhyUs() {
           <EnvironmentIcon />
           <p className="sectionTitle">Environment safe</p>
           <p className="sectionDescribtion">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            We have published a comprehensive sustainability report and have now partnered with
+            Ekos.
           </p>
         </div>
 
@@ -41,8 +40,8 @@ export function WhyUs() {
           <ShopOnline />
           <p className="sectionTitle">Shop online</p>
           <p className="sectionDescribtion">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            Secure Card Payment With VISA and MasterCard, Maestro and American Express. There are no
+            extra credit card fees for you.
           </p>
         </div>
 
@@ -50,8 +49,8 @@ export function WhyUs() {
           <FreeDelivery />
           <p className="sectionTitle">Free delivery</p>
           <p className="sectionDescribtion">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            For all orders in Sweden and Finland, free shipping is for SEK 300 or more. Otherwise, a
+            SEK 50 freight fee will be added.
           </p>
         </div>
 
@@ -59,8 +58,8 @@ export function WhyUs() {
           <EasyReturnIcon />
           <p className="sectionTitle">Easy return</p>
           <p className="sectionDescribtion">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            As a customer, you always have 14 days of withdrawal on distance contracts and contracts
+            outside commercial premises.
           </p>
         </div>
       </section>

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { getProductsById, ProductInfo } from '../../api/product';
+import { ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/formatCurrency';
 import { QtyBtn } from '../QtyBtn/QtyBtn';
@@ -14,7 +14,7 @@ interface ShoppingCartProps {
 }
 
 export function ShoppingCart({ products }: ShoppingCartProps) {
-  const { cartItems, removeFromCart, decreaseCartQuantity, increaseCartQuantity, getItemQuantity } =
+  const { removeFromCart, decreaseCartQuantity, increaseCartQuantity, getItemQuantity } =
     useShoppingCart();
 
   const totalPrice = products.reduce(
@@ -32,13 +32,11 @@ export function ShoppingCart({ products }: ShoppingCartProps) {
 
           <div className="shoppingCartWhiteBlock">
             <div className="shoppingCartWhiteBlockContent">
-              <p>Your items</p>
+              <p className="yourItemsShoppingCart">Your items</p>
 
               <ul className="shoppingCartUl">
                 <li>Products</li>
                 <li>Qty</li>
-                <li>Grind</li>
-                <li>Weight</li>
                 <li>Price</li>
               </ul>
 

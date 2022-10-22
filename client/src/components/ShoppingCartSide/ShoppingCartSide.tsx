@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ProductInfo } from '../../api/product';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
@@ -14,11 +15,13 @@ export function ShoppingCartSide({ productItem }: ShoppingCartSideProps) {
     <div>
       <div className="minicartBody">
         <div className="miniCartImage">
-          <Link to={`/product/${productItem.product_id}`}> <img className="miniProductImage" src={productItem.image_url} alt="product look" /> </Link>
+          <Link to={`/product/${productItem.product_id}`}>
+            <img className="miniProductImage" src={productItem.image_url} alt="product look" />
+          </Link>
         </div>
 
         <div className="miniCartSmallTitle">
-          <p className="miniCartSmallHeader">The Rituals of Sakura</p>
+          <p className="miniCartSmallHeader">Nom Nom Coffee</p>
           <p className="miniCartProductName"> {productItem.product_name} </p>
 
           <span className="miniCartQuantityLabel">Quantity: </span>

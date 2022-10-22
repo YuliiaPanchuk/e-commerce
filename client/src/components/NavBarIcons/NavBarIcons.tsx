@@ -3,11 +3,11 @@ import { ShoppingIcon } from './ShoppingIcon';
 import { UserProfile } from './UserProfile';
 import './icons.css';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
-import { useNavigate } from 'react-router-dom';
+import { LoginState, useLoginContext } from '../../context/UserContext';
 
 export function NavBarIcons() {
   const { openCart, cartQuantity } = useShoppingCart();
-  const navigate = useNavigate();
+  const { showLogIn } = useLoginContext();
 
   return (
     <div className="iconsNavBarWrapper">
@@ -35,7 +35,7 @@ export function NavBarIcons() {
           </button>
         </li>
         <li>
-          <button className="navbarIconBtn" onClick={() => navigate('/user')}>
+          <button className="navbarIconBtn" onClick={() => showLogIn(LoginState.Register)}>
             <UserProfile />
           </button>
         </li>

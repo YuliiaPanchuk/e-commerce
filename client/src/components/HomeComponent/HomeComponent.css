@@ -1,5 +1,6 @@
 .homeWrapper {
   height: 50vw;
+  position: relative;
 }
 
 .homeBanner {
@@ -9,37 +10,31 @@
 }
 
 .mainHomeImage {
-  width: 50%;
-  background-image: url("../../../public/images/testTwo.png");
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../public/images/mainI.jpg");
   object-fit: cover;
   background-repeat: no-repeat;
   background-size: 100%;
+  filter: blur(1px);
 }
 
 .mainHeader {
   font-size: 100px;
   padding: 16% 0 0 33%;
-  position: relative;
-  color: rgb(0, 0, 0);
+  position: absolute;
+  color: #fff;
   text-transform: uppercase;
   display: flex;
-}
-
-.leftHomeBox {
-  width: 50%;
-  height: 50vw;
-  background-color: #2C3E40;
-  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
   .homeWrapper {
     height: 100vw;
-  }
-
-  .leftHomeBox {
-    display: none;
   }
 
   .mainHomeImage {
@@ -54,9 +49,6 @@
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
-  .leftHomeBox {
-    display: none;
-  }
 
   .mainHomeImage {
     height: 100vw;

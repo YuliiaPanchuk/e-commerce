@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 0, 0);
+  background-color: #efedea;
 }
 
 .newsBlock {
@@ -82,5 +82,26 @@
   .newsWrapper {
     height: auto;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .imageNews {
+    height: 320px;
+    width: 239px;
+  }
+
+  .textNews {
+    text-align: center;
+    padding: 5px;
+    font-size: 13px;
+    line-height: 24px;
+    width: 229px;
+    margin-top: 296px;
+  }
+
+  .textNewsTitle {
+    font-size: 22px;
+    padding: 10px 0;
   }
 }

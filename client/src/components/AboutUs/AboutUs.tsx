@@ -23,13 +23,13 @@ export function AboutUs() {
         <div className="aboutUsText">
           <h1 className="aboutUsHeadline">NomNom Coffee Story</h1>
           <p className="aboutUsDescription">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br /> <br /> Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Our idea is really quite simple. We buy really good coffee, which is produced in a
+            sustainable way and we pay a fair sum. A rather banal concept and customary purchasing
+            philosophy for coffee one can imagine.
+            <br /> <br /> We prioritise quality and taste to create better coffee experiences for
+            our customers. We always ask, what can we do better? And because we have done this for
+            the past three decades, you can trust we will keep asking ourselves this question. Nom
+            Nom Coffee is one you can trust, for flavour and care.
           </p>
         </div>
       </div>

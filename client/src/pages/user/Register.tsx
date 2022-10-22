@@ -4,6 +4,7 @@ import { signUp } from '../../api/account';
 import { RegisterInputForm } from '../../components/RegisterForm/RegisterInputForm';
 import { Login } from '.';
 import './Register.css';
+import { LoginState, useLoginContext } from '../../context/UserContext';
 
 export function Register() {
   const [values, setValues] = useState({
@@ -13,6 +14,7 @@ export function Register() {
     confirmPassword: '',
   });
   const navigate = useNavigate();
+  const user = useLoginContext();
 
   const inputs = [
     {
@@ -87,7 +89,7 @@ export function Register() {
           />
         ))}
         <button className="registerFormInputSubmit">Submit</button>
-        <button className="loginFormInputSubmit" onClick={() => navigate('/user')}>
+        <button className="loginFormInputSubmit" onClick={() => user.showLogIn(LoginState.Login)}>
           Log in
         </button>
       </form>

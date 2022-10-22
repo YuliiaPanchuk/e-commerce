@@ -18,15 +18,18 @@
 }
 
 .registerFormInputSubmit {
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  border: none;
-  background-color: rebeccapurple;
-  color: white;
-  border-radius: 5px;
-  font-size: 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 14px 60px;
+  background-color: transparent;
+  border: 1px solid;
   cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-right: 5px;
+}
+
+.registerFormInputSubmit:hover {
+  color: #1a1919;
+  background-color: transparent;
+  border: 1px solid #1a1919;
 }

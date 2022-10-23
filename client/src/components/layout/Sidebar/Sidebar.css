@@ -23,7 +23,7 @@
 
 .Sidebar__Content {
   flex: 1;
-  max-width: 20%;
+  max-width: 50%;
   background-color: #f6f4f2;
   position: relative;
 }

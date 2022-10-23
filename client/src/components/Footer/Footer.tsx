@@ -48,9 +48,3 @@ export function Footer() {
     </>
   );
 }
-
-/*
-          <div className="footerLabel">
-            <LogoFrame />
-          </div>
-*/

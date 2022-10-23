@@ -113,7 +113,7 @@ export function ShoppingCart({ products }: ShoppingCartProps) {
             <p>{totalPrice}</p>
           </div>
 
-          <Link to="/creditCart">
+          <Link to="/">
             <button className="continueToCheckout">Continue to checkout</button>
           </Link>
 

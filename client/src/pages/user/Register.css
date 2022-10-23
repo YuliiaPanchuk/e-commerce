@@ -25,11 +25,16 @@
   background-color: transparent;
   border: 1px solid;
   cursor: pointer;
-  margin-right: 5px;
+
 }
 
 .registerFormInputSubmit:hover {
   color: #1a1919;
   background-color: transparent;
   border: 1px solid #1a1919;
+}
+
+.formButtons {
+  display: flex;
+  flex-direction: column;
 }

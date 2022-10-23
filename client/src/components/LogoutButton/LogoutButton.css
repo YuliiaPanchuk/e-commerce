@@ -1,0 +1,16 @@
+.logoutButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.logoutButton {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 14px 30px;
+  background-color: transparent;
+  border: 1px solid;
+  cursor: pointer;
+  margin-top: 5px;
+}

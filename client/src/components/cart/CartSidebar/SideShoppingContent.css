@@ -203,3 +203,9 @@
   background-color: transparent;
   border: 1px solid #1a1919;
 }
+
+@media (min-width: 768px) and (max-width: 1900px) {
+  .miniCartFooterBtn {
+    align-items: center;
+  }
+}

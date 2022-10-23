@@ -88,10 +88,12 @@ export function Register() {
             onChange={onChange}
           />
         ))}
-        <button className="registerFormInputSubmit">Submit</button>
-        <button className="loginFormInputSubmit" onClick={() => user.showLogIn(LoginState.Login)}>
-          Log in
-        </button>
+        <div className="formButtons">
+          <button className="registerFormInputSubmit">Submit</button>
+          <button className="loginFormInputSubmit" onClick={() => user.showLogIn(LoginState.Login)}>
+            Log in
+          </button>
+        </div>
       </form>
     </div>
   );

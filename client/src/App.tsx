@@ -11,7 +11,6 @@ import { Register } from './pages/user/Register';
 import { Store } from './pages/Store';
 
 import './App.css';
-import { CreditCart } from './components/CreditCart/CreditCart';
 import { Sidebar } from './components/layout/Sidebar/Sidebar';
 import { SideShoppingContent } from './components/cart/CartSidebar/SideShoppingContent';
 
@@ -65,9 +64,6 @@ function AppRouter() {
 
         {/* profile pages */}
         <Route path="/profile" element={<UserIndex />} />
-
-        {/* credit cart pages */}
-        <Route path="/creditCart" element={<CreditCart />} />
       </Routes>
 
       <Sidebar isOpen={isCartOpen} onClose={() => closeCart()}>

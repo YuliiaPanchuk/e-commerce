@@ -67,11 +67,19 @@
 }
 
 @media (min-width: 768px) and (max-width: 993px) {
-
   .sectionWrapper {
     height: auto;
-    grid-template-columns: repeat(3, 210px);
+    grid-template-columns: repeat(3, 290px);
+    width: auto;
     gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .sectionDescribtion {
+    font-size: 16px;
   }
 }
 

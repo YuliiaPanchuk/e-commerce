@@ -35,7 +35,7 @@ export function LoginForm() {
         />
 
         <label className="loginFormLabel" htmlFor="">
-          Password{' '}
+          Password
         </label>
         <input
           className="loginFormInput"
@@ -45,13 +45,15 @@ export function LoginForm() {
           value={password}
         />
 
-        <button className="loginFormInputSubmit">Log in</button>
-        <button
-          className="registerFormInputSubmit"
-          onClick={() => user.showLogIn(LoginState.Register)}
-        >
-          Register
-        </button>
+        <div className="formButtons">
+          <button className="loginFormInputSubmit">Log in</button>
+          <button
+            className="registerFormInputSubmit"
+            onClick={() => user.showLogIn(LoginState.Register)}
+          >
+            Register
+          </button>
+        </div>
       </form>
     </div>
   );

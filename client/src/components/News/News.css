@@ -84,7 +84,7 @@
     flex-direction: column;
   }
 
-  .imageNews {
+  .imageNews img{
     height: 320px;
     width: 239px;
   }
@@ -125,7 +125,7 @@
   }
 }
 
-@media (min-width: 1201px) and (max-width: 1900px) {
+@media (min-width: 1201px) and (max-width: 2100px) {
   .imageNews {
     width: 280px;
   }
